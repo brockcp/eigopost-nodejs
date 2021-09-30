@@ -21,5 +21,6 @@
   - **MongoDB(Atlas)** for database functionality
   - **MongooseJS** for object modeling
   - **Yup** for object schema validation
+  - **Jsonwebtoken** for securing tokens
 
 ### EigoPost is up and running live [here](https://eigopost.com)
