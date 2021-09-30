@@ -1,0 +1,605 @@
+html, body{
+  font-size:100%;
+	font-family: 'Helvetica', Times, serif;
+}
+
+//   ______   ______    __        ______   .______          _______.
+//  /      | /  __  \  |  |      /  __  \  |   _  \        /       |
+// |  ,----'|  |  |  | |  |     |  |  |  | |  |_)  |      |   (----`
+// |  |     |  |  |  | |  |     |  |  |  | |      /        \   \
+// |  `----.|  `--'  | |  `----.|  `--'  | |  |\  \----.----)   |
+//  \______| \______/  |_______| \______/  | _| `._____|_______/
+//
+@base-1: #e60000;
+@base-1d: darken(#e60000, 5%);
+@base-1l: lighten(#e60000, 15%);
+@base-1l1: lighten(#e60000, 45%);
+@base-2: #0066ff;
+@base-2d: darken(#0066ff, 15%);
+@base-2l: lighten(#0066ff, 10%);
+@base-2l1: lighten(#0066ff, 45%);
+@base-2l2: lighten(#0066ff, 47%);
+@base-3: #777777;
+@base-3d: darken(#777777, 10%);
+@base-3d1: darken(#777777, 20%);
+@base-3d2: darken(#777777, 25%);
+@base-3l: lighten(#777777, 10%);
+@base-3l1: lighten(#777777, 30%);
+@base-3l2: lighten(#777777, 50%);
+// COLOR CLASSES
+.color-1{color:@base-1}
+.color-1d{color: @base-1d}
+.color-1l{color: @base-1l}
+.color-2{color: @base-2}
+.color-2d{color: @base-2d}
+.color-2l{color: @base-2l}
+.color-2l1{color: @base-2l1}
+.color-3{color: @base-3}
+.color-3d{color: @base-3d}
+.color-3d1{color:@base-3d1}
+.color-3d2{color:@base-3d2}
+.color-3l{color: @base-3l}
+.color-3l1{color: @base-3l1}
+.color-3l2{color: @base-3l2}
+// BG COLORS
+.bg-2l1{background-color: @base-2l1} //bg for top landing container
+.bg-3d{background-color: @base-3d} //footer
+// LINK COLORS
+.color-3l-link{color: @base-3l1} //footer links
+.color-3l-link:hover{color: @base-3l2} //footer links hover
+.color-1d-link{color: @base-1d} //post back button
+.color-1d-link:hover{color: @base-1} //post back button hover
+a:hover{text-decoration: none}
+
+ //   _______  _______ .__   __.  _______ .______          ___       __
+ //  /  _____||   ____||  \ |  | |   ____||   _  \        /   \     |  |
+ // |  |  __  |  |__   |   \|  | |  |__   |  |_)  |      /  ^  \    |  |
+ // |  | |_ | |   __|  |  . `  | |   __|  |      /      /  /_\  \   |  |
+ // |  |__| | |  |____ |  |\   | |  |____ |  |\  \----./  _____  \  |  `----.
+ //  \______| |_______||__| \__| |_______|| _| `._____/__/     \__\ |_______|
+ //
+.font-s-20{font-size:20px !important}  //New Post <p> login or signup
+.font-s-30{font-size:30px !important}  //landing intro text
+
+.global-mh{
+  min-height:650px;
+}
+@media (min-height:1023px){
+  .global-mh{min-height:850px}
+}
+@media(min-height:1583px){
+  .global-mh{min-height:1350px;
+  }
+}
+.fadein {
+  animation:
+    fadeIn .5s linear forwards !important;
+}
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.customborder{
+  border:1px solid blue;
+}
+//  __   __       ___   ____    ____  ______        ___       ______
+// |  \ |  |     /   \  \   \  /   / |   _  \      /   \     |   _  \
+// |   \|  |    /  ^  \  \   \/   /  |  |_)  |    /  ^  \    |  |_)  |
+// |       |   /  /_\  \  \      /   |   _  <    /  /_\  \   |      /
+// |  |\   |  /  _____  \  \    /    |  |_)  |  /  _____  \  |  |\  \
+// |__| \__| /__/     \__\  \__/     |______/  /__/     \__\ | _| `._|
+//
+.navbar{
+	background-color: #ffffff !important;
+	border-bottom: 1px solid @base-3l1;
+  padding: 0rem 1.5rem !important;
+	//padding:0;
+}
+.navbar .navbar-brand{
+  color: @base-1 !important
+}
+.navbar .navbar-brand:hover{
+  color: @base-1l
+}
+.nav-link, a.nav-link{
+  color: @base-1
+}
+.nav-link:hover, a.nav-link:hover{
+  color: @base-1l !important;
+  cursor:pointer
+}
+@media (min-width: 768px){
+  .nav-item {
+    margin-left:15px;
+  }
+}
+
+// .___  ___.  _______ .__   __.  __    __     .______    __    __  .___________.___________.  ______   .__   __.
+// |   \/   | |   ____||  \ |  | |  |  |  |    |   _  \  |  |  |  | |           |           | /  __  \  |  \ |  |
+// |  \  /  | |  |__   |   \|  | |  |  |  |    |  |_)  | |  |  |  | `---|  |----`---|  |----`|  |  |  | |   \|  |
+// |  |\/|  | |   __|  |  . `  | |  |  |  |    |   _  <  |  |  |  |     |  |        |  |     |  |  |  | |  . `  |
+// |  |  |  | |  |____ |  |\   | |  `--'  |    |  |_)  | |  `--'  |     |  |        |  |     |  `--'  | |  |\   |
+// |__|  |__| |_______||__| \__|  \______/     |______/   \______/      |__|        |__|      \______/  |__| \__|
+//
+#menuButton{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 1.7rem;
+  height: 1.7rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+#menuButton .one,
+#menuButton .two,
+#menuButton .three{
+  width: 1.7rem;
+  height: 0.25rem;
+  background: @base-1;
+  border-radius: 10px;
+  transition: all .2s linear;
+  transform:rotate(0);
+  //transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+}
+#menuButton .one.close{
+  transform:rotate(-45deg) translate(-8px, 5px);
+  opacity:1;
+  background:@base-1l;
+  z-index:10
+}
+#menuButton .two.close{
+  opacity:0;
+}
+#menuButton .three.close{
+  transform:rotate(45deg) translate(-7px, -6px);
+  opacity:1;
+  background:@base-1l;
+  z-index:10;
+}
+
+// .___  ___.  _______ .__   __.  __    __          _______. __       __   _______   _______
+// |   \/   | |   ____||  \ |  | |  |  |  |        /       ||  |     |  | |       \ |   ____|
+// |  \  /  | |  |__   |   \|  | |  |  |  |       |   (----`|  |     |  | |  .--.  ||  |__
+// |  |\/|  | |   __|  |  . `  | |  |  |  |        \   \    |  |     |  | |  |  |  ||   __|
+// |  |  |  | |  |____ |  |\   | |  `--'  |    .----)   |   |  `----.|  | |  '--'  ||  |____
+// |__|  |__| |_______||__| \__|  \______/     |_______/    |_______||__| |_______/ |_______|
+//
+#slideMenu {
+  top: 2.5rem;
+  left: 0;
+  position: fixed;
+  overflow: scroll;
+  z-index: 9;
+  padding:2rem;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px @base-3l1;
+  transition: transform .5s cubic-bezier(0, .52, 0, 1);
+}
+#slideMenu.hide {
+  transform: translate3d(-100vw, 0, 0);
+}
+#slideMenu.show {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+}
+#slideMenu.show li{
+  list-style-type: none;
+}
+#slideMenu.show li .nav-link{
+  color: @base-1d;
+}
+@media (min-width: 576px) {
+  #menuButton,
+  #slideMenu{
+    display: none;
+  }
+}
+
+// .______     ______   .______     ______   ____    ____  _______ .______
+// |   _  \   /  __  \  |   _  \   /  __  \  \   \  /   / |   ____||   _  \
+// |  |_)  | |  |  |  | |  |_)  | |  |  |  |  \   \/   /  |  |__   |  |_)  |
+// |   ___/  |  |  |  | |   ___/  |  |  |  |   \      /   |   __|  |      /
+// |  |      |  `--'  | |  |      |  `--'  |    \    /    |  |____ |  |\  \----.
+// | _|       \______/  | _|       \______/      \__/     |_______|| _| `._____|
+
+.popover-container{
+  position:relative;
+  z-index:100;
+}
+.popover{
+  position:absolute;
+  width: 150px;
+  margin: 20px auto;
+  padding: 15px;
+  top:-5px;
+  left:-100px;
+  background: #fff;
+  border-radius: 4px;
+  font-size:16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+a.popover{
+  color:@base-1 !important;
+}
+a.popover:hover{
+  color: @base-1l !important;
+}
+
+//  __          ___      .__   __.  _______   __  .__   __.   _______
+// |  |        /   \     |  \ |  | |       \ |  | |  \ |  |  /  _____|
+// |  |       /  ^  \    |   \|  | |  .--.  ||  | |   \|  | |  |  __
+// |  |      /  /_\  \   |  . `  | |  |  |  ||  | |  . `  | |  | |_ |
+// |  `----./  _____  \  |  |\   | |  '--'  ||  | |  |\   | |  |__| |
+// |_______/__/     \__\ |__| \__| |_______/ |__| |__| \__|  \______|
+//
+.jumbotron{
+  padding:2rem !important; //jumbotron default is 4rem 2rem
+  background-color:@base-2l1;
+}
+@media (min-width: 768px){
+  .inline-b-768{
+    display: inline-block;
+  }
+}
+.font-responsive-logo{
+  font-size: 30px;
+}
+@media (min-width: 768px){
+  .font-responsive-logo{
+    font-size: 55px !important;
+  }
+}
+.font-responsive-sublogo{
+  font-size: 15px;
+}
+@media (min-width: 768px){
+  .font-responsive-sublogo{
+    font-size: 25px;
+  }
+}
+.logo{
+  width:60%;
+  height:auto;
+}
+@media (min-width: 576px){
+  .logo{
+    width:400px;
+    height:400px;
+  }
+}
+.max-w-700{
+  max-width:700px;
+  margin: 0 auto;
+}
+.lang-ja{
+  font-family: 'MS PGothic', Osaka, Arial, sans-serif;
+  display:inline-block;
+}
+.font-responsive-ja{
+  font-size:20px;
+}
+@media (min-width: 768px){
+  .font-responsive-ja{
+    font-size:25px;
+  }
+}
+
+// .______     ______        _______.___________.    _______.     ___ ______   ______   .___  ___. .___  ___.  _______ .__   __. .___________.    _______.
+// |   _  \   /  __  \      /       |           |   /       |    /  //      | /  __  \  |   \/   | |   \/   | |   ____||  \ |  | |           |   /       |
+// |  |_)  | |  |  |  |    |   (----`---|  |----`  |   (----`   /  /|  ,----'|  |  |  | |  \  /  | |  \  /  | |  |__   |   \|  | `---|  |----`  |   (----`
+// |   ___/  |  |  |  |     \   \       |  |        \   \      /  / |  |     |  |  |  | |  |\/|  | |  |\/|  | |   __|  |  . `  |     |  |        \   \
+// |  |      |  `--'  | .----)   |      |  |    .----)   |    /  /  |  `----.|  `--'  | |  |  |  | |  |  |  | |  |____ |  |\   |     |  |    .----)   |
+// | _|       \______/  |_______/       |__|    |_______/    /__/    \______| \______/  |__|  |__| |__|  |__| |_______||__| \__|     |__|    |_______/
+//
+.posts-box, .comments-box{
+  padding-left:.5rem;
+  border-top:1px solid @base-3l1;
+  border-left:1px solid @base-3l1;
+  border-right:1px solid @base-3l1;
+}
+.posts-box:last-child, .comments-box:last-child{
+  border-bottom:1px solid @base-3l1;
+}
+.post-box{
+  padding:.7rem;
+  border:1px solid @base-3l1;
+}
+
+// .______    __    __  .___________.___________.  ______   .__   __.      _______.
+// |   _  \  |  |  |  | |           |           | /  __  \  |  \ |  |     /       |
+// |  |_)  | |  |  |  | `---|  |----`---|  |----`|  |  |  | |   \|  |    |   (----`
+// |   _  <  |  |  |  |     |  |        |  |     |  |  |  | |  . `  |     \   \
+// |  |_)  | |  `--'  |     |  |        |  |     |  `--'  | |  |\   | .----)   |
+// |______/   \______/      |__|        |__|      \______/  |__| \__| |_______/
+//
+.btn{
+	border-radius:4px;
+	width:150px;
+}
+.btn-primary{
+  color:#fff;
+	background-color: @base-1;
+	border-color: @base-1l;
+}
+.btn-primary:hover{
+  color:#fff;
+	background-color: @base-1d;
+	border-color:@base-1l;
+}
+.btn-primary:focus, .btn-primary.focus {
+  color: #fff;
+  background-color: @base-1;
+  border-color: @base-1l;
+  box-shadow: 0 0 0 0.2rem rgba(230, 0, 0, 0.5);
+}
+.btn-primary.disabled, .btn-primary:disabled {
+  color: #fff;
+  background-color: @base-1;
+  border-color: @base-1l;
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: @base-1;
+  border-color: @base-1l;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(230, 0, 0, 0.5);
+}
+
+// _______   ______   .______      .___  ___.      _______.
+// |   ____| /  __  \  |   _  \     |   \/   |     /       |
+// |  |__   |  |  |  | |  |_)  |    |  \  /  |    |   (----`
+// |   __|  |  |  |  | |      /     |  |\/|  |     \   \
+// |  |     |  `--'  | |  |\  \----.|  |  |  | .----)   |
+// |__|      \______/  | _| `._____||__|  |__| |_______/
+//
+.accounts-form, .new-post-form{
+  width:98%;
+  margin: 2rem auto;
+  box-shadow: 0 2px 5px 2px  #cccccc;
+}
+@media (min-width: 576px) {
+  .accounts-form, .new-post-form {
+    max-width: 500px;
+  }
+}
+.account-form-title, .new-form-title{
+  font-weight: 500;
+  padding-top: 1.5rem;
+  padding-left:1rem
+}
+.account-form-login{
+  font-weight: 500;
+  padding-left:1rem
+}
+input.form-control,
+#comment_body,
+#post_body,
+#post_title{
+  outline:none;
+  border: 1px solid @base-3l1;
+  -webkit-box-shadow: 0 0 0 0 inset !important;
+}
+.form-control.is-invalid{
+  border-color: @base-1;
+  outline:none !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='none' stroke='red' viewBox='0 0 12 12'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='red' stroke='none'/%3e%3c/svg%3e");
+}
+.invalid-feedback{
+  color:@base-1d;
+}
+
+//      ___       __       _______ .______     .___________.    _______.
+//     /   \     |  |     |   ____||   _  \    |           |   /       |
+//    /  ^  \    |  |     |  |__   |  |_)  |   `---|  |----`  |   (----`
+//   /  /_\  \   |  |     |   __|  |      /        |  |        \   \
+//  /  _____  \  |  `----.|  |____ |  |\  \----.   |  |    .----)   |
+// /__/     \__\ |_______||_______|| _| `._____|   |__|    |_______/
+//
+.alert {
+  position: relative;
+  padding: 0.75rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid transparent;
+  border-radius: 0;
+}
+.alert-success {
+  color: @base-3;
+  background-color: @base-2l1;
+  border-left: @base-3;
+  border-right: @base-3;
+  border-bottom: @base-3;
+}
+.alert-danger {
+  color: @base-3;
+  background-color: @base-1l1;
+  border-left: @base-3;
+  border-right: @base-3;
+  border-bottom: @base-3;
+}
+
+// .___  ___.   ______    _______       ___       __          _______.
+// |   \/   |  /  __  \  |       \     /   \     |  |        /       |
+// |  \  /  | |  |  |  | |  .--.  |   /  ^  \    |  |       |   (----`
+// |  |\/|  | |  |  |  | |  |  |  |  /  /_\  \   |  |        \   \
+// |  |  |  | |  `--'  | |  '--'  | /  _____  \  |  `----.----)   |
+// |__|  |__|  \______/  |_______/ /__/     \__\ |_______|_______/
+//
+.ep-modal {
+  display: block;
+  position: fixed;
+  width: 270px;
+  height: 420px;
+  top: calc(40% - 150px);
+  left: calc(50% - 135px);
+  padding: 40px;
+  z-index: 90;
+  color: #fff;
+  background: @base-1d;
+}
+@media (min-width:413px){
+  .ep-modal{
+    width:400px;
+    height:300px;
+    left: calc(50% - 200px);
+  }
+}
+.ep-modal-title{
+  display:inline-block;
+  width:90%;
+  //border:1px solid blue;
+}
+.ep-modal-icon-container{
+  display:inline-block;
+  width:10%;
+  vertical-align: top;
+  padding-top:.5rem;
+  cursor:pointer;
+  //border:1px solid black;
+}
+.ep-modal-body{
+  padding: 2rem 0;
+  //border: 1px solid yellow;
+}
+.ep-modal-body p{
+  //border: 1px solid orange;
+}
+.ep-modal-footer{
+  margin-left:5px;
+  //border:1px solid purple;
+}
+
+// ____    ____  ______   .___________. __  .__   __.   _______
+// \   \  /   / /  __  \  |           ||  | |  \ |  |  /  _____|
+//  \   \/   / |  |  |  | `---|  |----`|  | |   \|  | |  |  __
+//   \      /  |  |  |  |     |  |     |  | |  . `  | |  | |_ |
+//    \    /   |  `--'  |     |  |     |  | |  |\   | |  |__| |
+//     \__/     \______/      |__|     |__| |__| \__|  \______|
+//
+.voting-box img:hover{
+  cursor:pointer
+}
+.votes {
+  text-align: center;
+  color: @base-3d1;
+  line-height: 1.2rem;
+}
+
+// __        ______        ___       _______   _______ .______
+// |  |      /  __  \      /   \     |       \ |   ____||   _  \
+// |  |     |  |  |  |    /  ^  \    |  .--.  ||  |__   |  |_)  |
+// |  |     |  |  |  |   /  /_\  \   |  |  |  ||   __|  |      /
+// |  `----.|  `--'  |  /  _____  \  |  '--'  ||  |____ |  |\  \
+// |_______| \______/  /__/     \__\ |_______/ |_______|| _| `._|
+//
+.loader-container{
+}
+.loader {
+  position: fixed;
+  display: block;
+  z-index: 9;
+  top: 50%;
+  left: 46%;
+  margin: -40px 0 0 -20px;
+  height: 80px;
+  width: 80px;
+  border: 10px solid red;
+  border-top-color:rgba(247, 12, 5, 1);
+  border-left-color:rgba(247, 12, 5, .7);
+  border-bottom-color:rgba(247, 12, 5, .5);
+  border-right-color: rgba(247, 12, 5, .3);
+  border-radius: 80px;
+}
+.loader-fadeIn {
+  animation:
+    loaderRotate 1s linear infinite,
+    loaderFadeIn .5s linear forwards;
+}
+@keyframes loaderRotate {
+  100% {transform: rotate(360deg);}
+}
+@keyframes loaderFadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+
+ // .__   __.   ______   .___________.    _______   ______    __    __  .__   __.  _______
+ // |  \ |  |  /  __  \  |           |   |   ____| /  __  \  |  |  |  | |  \ |  | |       \
+ // |   \|  | |  |  |  | `---|  |----`   |  |__   |  |  |  | |  |  |  | |   \|  | |  .--.  |
+ // |  . `  | |  |  |  |     |  |        |   __|  |  |  |  | |  |  |  | |  . `  | |  |  |  |
+ // |  |\   | |  `--'  |     |  |        |  |     |  `--'  | |  `--'  | |  |\   | |  '--'  |
+ // |__| \__|  \______/      |__|        |__|      \______/   \______/  |__| \__| |_______/
+ //
+.logo-404{
+  width:60%;
+  height:auto;
+}
+@media (min-width: 576px){
+  .logo-404{
+    max-width:400px;
+    max-height:400px;
+  }
+}
+
+//      _______. __  ___  _______  __       _______ .___________.  ______   .__   __.
+//     /       ||  |/  / |   ____||  |     |   ____||           | /  __  \  |  \ |  |
+//    |   (----`|  '  /  |  |__   |  |     |  |__   `---|  |----`|  |  |  | |   \|  |
+//     \   \    |    <   |   __|  |  |     |   __|      |  |     |  |  |  | |  . `  |
+// .----)   |   |  .  \  |  |____ |  `----.|  |____     |  |     |  `--'  | |  |\   |
+// |_______/    |__|\__\ |_______||_______||_______|    |__|      \______/  |__| \__|
+//
+.skel-container{
+ padding:.5rem .2rem;
+
+ position:relative;
+}
+.skel-line{
+  background: rgba(230,0,0,.2);
+  border-radius: .25rem;
+}
+.skel-post-title{
+  width:50%;
+  height:1.5rem;
+}
+.skel-post-body{
+  margin-top: .3rem;
+  width:90%;
+  height:1rem
+}
+.skel-meta{
+  margin-top:.3rem;
+  width:70%;
+  height:.75rem
+}
+
+//      _______. __  ___  _______  __       _______ .___________.  ______   .__   __.     _______  _______  _______  _______   ______ .___________.    _______.
+//     /       ||  |/  / |   ____||  |     |   ____||           | /  __  \  |  \ |  |    |   ____||   ____||   ____||   ____| /      ||           |   /       |
+//    |   (----`|  '  /  |  |__   |  |     |  |__   `---|  |----`|  |  |  | |   \|  |    |  |__   |  |__   |  |__   |  |__   |  ,----'`---|  |----`  |   (----`
+//     \   \    |    <   |   __|  |  |     |   __|      |  |     |  |  |  | |  . `  |    |   __|  |   __|  |   __|  |   __|  |  |         |  |        \   \
+// .----)   |   |  .  \  |  |____ |  `----.|  |____     |  |     |  `--'  | |  |\   |    |  |____ |  |     |  |     |  |____ |  `----.    |  |    .----)   |
+// |_______/    |__|\__\ |_______||_______||_______|    |__|      \______/  |__| \__|    |_______||__|     |__|     |_______| \______|    |__|    |_______/
+//
+.effects-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    animation: loading 1.5s infinite;
+}
+.effects{
+    width: 30%;
+    height: 100%;
+    background: rgb(255, 255, 255);
+    transform: skew(-20deg);
+}
+@keyframes loading{
+    0%{transform: translate(-100%);}
+    100%{transform: translate(150%);}
+}
