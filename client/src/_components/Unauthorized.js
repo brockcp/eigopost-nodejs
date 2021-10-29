@@ -1,16 +1,16 @@
 import React from 'react';
 import notFoundLogo from '../assets/img-404.svg';
 
-const NotFound = () => {
-  document.title = "Eigopost | Not Found"
+const Unauthorized = () => {
+  document.title = "Eigopost | Unauthorized"
   return (
-    <div className="container not-found text-center fade-in">
+    <div className="container text-center fade-in">
         <img src={notFoundLogo}
              className="logo-404 fade-in"
              alt="logo"
         />
-        <h3 className="">Oh 404! We Cannot find that page!</h3>
+        <p>You do not have permission to access that page.</p>
     </div>
   );
 }
-export {NotFound};
+export {Unauthorized};

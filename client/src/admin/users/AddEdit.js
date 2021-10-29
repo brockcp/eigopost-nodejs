@@ -85,19 +85,19 @@ function AddEdit({ history, match }) {
                     <Form>
                         <h1>{isAddMode ? 'Add User' : 'Edit User'}</h1>
                         <div className="form-row">
-                            <div className="form-group col-5">
+                            <div className="mb-3 col-5">
                                 <label>Username:</label>
                                 <Field name="userName" type="text" className={'form-control' + (errors.userName && touched.userName ? ' is-invalid' : '')} />
                                 <ErrorMessage name="userName" component="div" className="invalid-feedback" />
                             </div>
                         </div>
                         <div className="form-row">
-                            <div className="form-group col-7">
+                            <div className="mb-3 col-7">
                                 <label>Email</label>
                                 <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
                                 <ErrorMessage name="email" component="div" className="invalid-feedback" />
                             </div>
-                            <div className="form-group col">
+                            <div className="mb-3 col">
                                 <label>Role</label>
                                 <Field name="role" as="select" className={'form-control' + (errors.role && touched.role ? ' is-invalid' : '')}>
                                     <option value=""></option>
@@ -114,18 +114,18 @@ function AddEdit({ history, match }) {
                             </div>
                         }
                         <div className="form-row">
-                            <div className="form-group col">
+                            <div className="mb-3 col">
                                 <label>Password</label>
                                 <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
                                 <ErrorMessage name="password" component="div" className="invalid-feedback" />
                             </div>
-                            <div className="form-group col">
+                            <div className="mb-3 col">
                                 <label>Confirm Password</label>
                                 <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
                                 <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
                             </div>
                         </div>
-                        <div className="form-group">
+                        <div className="mb-3">
                             <button type="submit" disabled={isSubmitting} className="btn btn-primary">
                                 {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
                                 Save

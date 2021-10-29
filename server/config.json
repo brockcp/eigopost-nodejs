@@ -1,13 +1,13 @@
 ﻿{
-  "connectionString": "remote db address",
+  "connectionString": "MONGODBCONNECTIONSTRING",
   "secret": "SECRET",
   "emailFrom": "info@eigopost.com",
   "smtpOptions": {
     "host": "smtp.sendgrid.net",
     "port": 587,
     "auth": {
-      "user": "sendgrid user",
-      "pass": "sendgrid password"
+      "user": "USER",
+      "pass": "PASS"
     }
   }
 }

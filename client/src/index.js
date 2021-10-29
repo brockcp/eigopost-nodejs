@@ -4,8 +4,7 @@ import {render} from 'react-dom';
 import {history} from './_helpers';
 import {accountService} from './_services';
 import App from './app';
-import './scss/styles-bootstrap.css';
-import './scss/styles.less';
+import './scss/styles.scss';
 import './favicon.ico';
 
 accountService.refreshToken().finally(startApp);

@@ -1,0 +1,17 @@
+.alert {
+  border-radius: 0;
+}
+.alert-success {
+  color: var(--mono-6);
+  background-color: var(--alertSuccess-blue3-blue3);
+  border: none;
+}
+.alert-danger {
+  color: var(--mono-6);
+  background-color: var(--alertDanger-red2-red1);
+  border: none;
+}
+.btn-close {
+  padding-left: 3rem;
+  background: var(--alertIcon-ffffff-ffffff) !important;
+}

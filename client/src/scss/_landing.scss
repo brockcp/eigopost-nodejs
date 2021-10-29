@@ -1,0 +1,58 @@
+.jumbotron{
+  padding:2rem !important; //jumbotron default is 4rem 2rem
+  background-color: var(--bgColor-mono6-blue2);
+}
+.jumbotron h1{
+  color: var(--fontColor-red2-mono4);
+}
+@media (min-width: 768px){
+  .inline-b-768{
+    display: inline-block;
+  }
+}
+.font-responsive-logo{
+  font-size: 30px;
+}
+@media (min-width: 768px){
+  .font-responsive-logo{
+    font-size: 55px !important;
+  }
+}
+.font-responsive-sublogo{
+  font-size: 15px;
+}
+@media (min-width: 768px){
+  .font-responsive-sublogo{
+    font-size: 25px;
+  }
+}
+.logo{
+  width:60%;
+  height:auto;
+}
+@media (min-width: 576px){
+  .logo{
+    width:400px;
+    height:400px;
+  }
+}
+.max-w-700{
+  max-width:700px;
+  margin: 0 auto;
+}
+.lang-ja{
+  font-family: 'MS PGothic', Osaka, Arial, sans-serif;
+  display:inline-block;
+  color: var(--fontColor-mono3-mono5);
+}
+.font-responsive-ja{
+  font-size:20px;
+}
+@media (min-width: 768px){
+  .font-responsive-ja{
+    font-size:25px;
+  }
+}
+.landing-sub{
+  background: var(--bgColor-blue6-mono3);
+}

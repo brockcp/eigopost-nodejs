@@ -6,10 +6,10 @@ const Error= () => {
   return (
     <div className="container text-center">
         <img src={notFoundLogo}
-             className="logo-404 fadein"
+             className="logo-404 fade-in"
              alt="logo"
         />
-        <p>Oops! Please try again or go back.</p>
+        <h3 className="">Oops! Please try again or go back.</h3>
     </div>
   );
 }

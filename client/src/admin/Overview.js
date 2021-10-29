@@ -6,8 +6,8 @@ function Overview({ match }) {
 
     return (
         <div className="">
-            <h1>Admin</h1>
-            <p>This section can only be accessed by administrators.</p>
+            <h1 className="">Admin</h1>
+            <p className="">This section can only be accessed by administrators.</p>
             <p><Link to={`${path}/users`}>Manage Users</Link></p>
         </div>
     );

@@ -1,0 +1,22 @@
+.popover-container{
+  position:relative;
+  z-index:100;
+}
+.popover{
+  position:absolute;
+  width: 150px;
+  margin: 20px auto;
+  padding: 15px;
+  top:-25px;
+  left:-50px;
+  background: var(--bgColor-mono6-blue2);
+  border-radius: 4px;
+  font-size:16px;
+  box-shadow: var(--boxShadow-0280mono4-0000mono5);
+}
+a.popover{
+  color: var(--fontColor-mono2-mono6) !important;
+}
+a.popover:hover{
+  color:  var(--fontColor-mono3-mono5) !important;
+}

@@ -1,0 +1,32 @@
+.profile-details h3,
+.profile-details h4{
+  color: var(--fontColor-red2-red3);
+}
+.profile-details td{
+  color: var(--fontColor-mono2-mono6);
+}
+.user-posts h5,
+.user-comments h5,
+.user-votes-up h5,
+.user-votes-down h5{
+  color: var(--fontColor-mono2-mono6);
+}
+.user-posts .activity-count,
+.user-comments .activity-count,
+.user-votes-up .activity-count,
+.user-votes-down .activity-count,
+.user-posts h6,
+.user-comments h6,
+.user-votes-up h6,
+.user-votes-down h6{
+  color: var(--fontColor-red2-red3);
+}
+.user-comments .score{
+  color: var(--fontColor-mono3-mono5);
+}
+.user-posts .date,
+.user-comments .date,
+.user-votes-up .date,
+.user-votes-down .date{
+  color: var(--fontColor-mono2-mono6);
+}

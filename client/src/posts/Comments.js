@@ -61,52 +61,58 @@ const Comments= (props) => {
     setCommentsData(comments);
   };
   return (
-    <div className="">
-      <h4 className="color-1d">comments</h4>
+    <div className="comments">
+      <h4 className="pt-4">comments</h4>
       {error && <div>Oops. Please refresh your browser</div>}
       {loading ? (
          <Loader/>
          ):(
-         <div className="container">
-          {commentsData.map((x,y)=>(
-           <div key={y}
-                className="row p-2 comments-box">
-            <div className="col-1 d-flex align-items-center">
-              <div className="voting-box">
-                <img src={voteUp}
-                      className={`d-block ${user && x.upvotedby.includes(user.id) ?
-                        'upvoted' : ''}`}
-                      onClick={()=>upVote(x._id)}
-                 />
-                 <div className="votes d-block align-middle pt-1">{x.score}</div>
-                 <img src={voteDown}
-                      className={`d-block ${user && x.downvotedby.includes(user.id) ?
-                        'downvoted' : ''}`}
-                      onClick={()=>downVote(x._id)}
-                 />
+         <div className="container fade-in">
+          {commentsData &&
+            <div className="">
+              <div className="">
+                  {commentsData.map((x,y)=>(
+                     <div key={y}
+                          className="row p-2 comments-box">
+                          <div className="col-1 d-flex align-items-center">
+                            <div className="voting-box">
+                              <img src={voteUp}
+                                    className={`d-block ${user && x.upvotedby.includes(user.id) ?
+                                      'upvoted' : ''}`}
+                                    onClick={()=>upVote(x._id)}
+                               />
+                              <div className="votes d-block align-middle pt-1">{x.score}</div>
+                              <img src={voteDown}
+                                    className={`d-block ${user && x.downvotedby.includes(user.id) ?
+                                      'downvoted' : ''}`}
+                                    onClick={()=>downVote(x._id)}
+                               />
+                            </div>
+                          </div>
+                          <div className="col-11">
+                            <p className="mb-0"> {x.comment_body}</p>
+                            <small className="comment-info">comment by
+                              <span className="user-name">
+                                &emsp;{x.userName}&emsp;
+                              </span>
+                            </small>
+                            <small className="comment-date">
+                               on {moment(x.createdAt).format('MM/DD/YYYY')}
+                            </small>
+                          </div>
+                     </div>
+                  ))}
+                  {commentsData < 1 && <h5 className="no-comments">This post has no comments.</h5>}
               </div>
+              <FormComment postId={props.postId}/>
             </div>
-            <div className="col-11">
-              <p className="mb-0 color-3d"> {x.comment_body}</p>
-              <small className="color-3">comment by
-                <span className="color-1l">
-                  &emsp;{x.userName}&emsp;
-                </span>
-              </small>
-              <small className="color-3">
-                 on {moment(x.createdAt).format('MM/DD/YYYY')}
-              </small>
-            </div>
-            <ModalAccounts modalVis={modalVisible}
-                            setModalVisOff={setModalVisible}/>
-           </div>
-          ))}
-          {commentsData < 1 && <div>Be the first to comment on this post.</div>}
+          }
          </div>
        )}
 
-      <FormComment postId={props.postId}/>
-    </div>
+       <ModalAccounts modalVis={modalVisible}
+                       setModalVisOff={setModalVisible}/>
+     </div>
   )
 }
 export default Comments;

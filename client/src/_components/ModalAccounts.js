@@ -37,8 +37,8 @@ const ModalAccountsSub = ({ style, closeModal }) => (
       <h5>However, you must signup to post, comment or vote.</h5>
     </div>
     <div className="ep-modal-footer">
-      <NavLink to='/account/login' className="btn btn-secondary mr-1">Sign In</NavLink>
-      <NavLink to='/account/register' className="btn btn-primary">Sign Up</NavLink>
+      <NavLink to='/account/login' className="btn btn-secondary me-2">Sign In</NavLink>
+      <NavLink to='/account/register' className="btn btn-primary ps-2">Sign Up</NavLink>
     </div>
   </animated.div>
 );

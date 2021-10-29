@@ -1,0 +1,44 @@
+//REQUIRED
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+//RESET
+@import "../../node_modules/bootstrap/scss/reboot";
+//LAYOUT
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/containers";
+//NAVBAR
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/transitions";
+//FORMS
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/card";
+//ALERTS
+@import "../../node_modules/bootstrap/scss/alert";
+@import "../../node_modules/bootstrap/scss/close";
+//BUTONS
+@import "../../node_modules/bootstrap/scss/buttons";
+//UTILITES ex. px-0
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+//
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/type";
+
+@import "./alerts";
+@import "./buttons";
+@import "./colors";
+@import "./dark";
+@import "./forms";
+@import "./landing";
+@import "./loader";
+@import "./main";
+@import "./menu-button";
+@import "./menu-popover";
+@import "./menu-slide";
+@import "./modals";
+@import "./navbar";
+@import "./posts";
+@import "./profile";
+@import "./skeleton";

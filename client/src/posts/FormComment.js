@@ -12,7 +12,7 @@ const FormComment = (props) => {
   const [modalVisible, setModalVisible] = useState(false);
   const [postId, setPostId] = useState(props.postId);
   useEffect(() => {
-    setPostId(props.postId);
+    setPostId(postId);
   }, [props.postId]);
 
   function onSubmit(fields, { setStatus, setSubmitting }) {
@@ -34,7 +34,7 @@ const FormComment = (props) => {
       });
   }
   return (
-    <div className="container pt-4 text-center fade-in">
+    <div className="container comment-form fade-in pt-4 text-center">
       {user ? (
         <div className="container pt-4 fade-in">
           <Formik
@@ -52,13 +52,16 @@ const FormComment = (props) => {
           >
             {({ errors, touched, isSubmitting }) => (
               <Form>
-                  <div className="form-group">
-                    <label>Comment:</label>
-                    <Field name="comment_body" component="textarea" rows="5" className={'form-control' + (errors.comment_body && touched.comment_body ? ' is-invalid' : '')} />
+                  <div className="mb-3">
+                    <label>
+                      Comment:
+                    </label>
+                    <Field name="comment_body" component="textarea" rows="5" className={'form-control' +
+                     (errors.comment_body && touched.comment_body ? ' is-invalid' : '')} />
                     <ErrorMessage name="comment_body" component="div" className="invalid-feedback" />
                   </div>
 
-                  <div className="form-group">
+                  <div className="mb-3">
                     <button type="submit" disabled={isSubmitting} className="btn btn-primary">
                       {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
                       Submit Comment
@@ -75,8 +78,9 @@ const FormComment = (props) => {
         </div>
       ):(
         <div className="container p-4 fade-in">
-          <h5 className="">Would you like to comment? Please sign up.</h5>
-          <Link to={'/account/register'} className="btn btn-primary">Sign Up</Link>
+          <h5 className="guest-message">Would you like to comment? Please sign in or sign up.</h5>
+          <Link to={'/account/login'} className="btn btn-secondary m-1">Sign in</Link>
+          <Link to={'/account/register'} className="btn btn-primary m-1">Sign up</Link>
         </div>
       )}
     </div>

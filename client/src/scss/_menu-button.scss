@@ -1,0 +1,37 @@
+#menuButton{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 1.7rem;
+  height: 1.7rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+#menuButton .one,
+#menuButton .two,
+#menuButton .three{
+  width: 1.7rem;
+  height: 0.25rem;
+  background:  var(--fontColor-mono6-mono6);
+  border-radius: 10px;
+  transition: all .2s linear;
+  transform:rotate(0);
+  //transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+}
+#menuButton .one.close{
+  transform:rotate(-45deg) translate(-8px, 5px);
+  opacity:1;
+  background: var(--fontColor-mono6-mono6);
+  z-index:10
+}
+#menuButton .two.close{
+  opacity:0;
+}
+#menuButton .three.close{
+  transform:rotate(45deg) translate(-7px, -6px);
+  opacity:1;
+  background: var(--fontColor-mono6-mono6);
+  z-index:10;
+}

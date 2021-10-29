@@ -1,0 +1,66 @@
+.btn{
+	border-radius:4px;
+	width:150px;
+}
+.btn-primary{
+  color: var(--mono-6);
+	background-color:  var(--buttonColor-red3-red2);
+	border-color:  var(--buttonColor-red3-red2);
+}
+.btn-primary:hover{
+  color: var(--mono-6);
+	background-color:  var(--buttonColor-red2-red1);
+	border-color: var(--buttonColor-red2-red1);
+}
+.btn-primary:focus, .btn-primary.focus {
+  color: var(--mono-6);
+  background-color:  var(--buttonColor-red2-red1);
+  border-color:  var(--buttonColor-red2-red1);
+  box-shadow: 0 0 0 0.2rem rgba(230, 0, 0, 0.5);
+}
+.btn-primary.disabled, .btn-primary:disabled {
+  color: var(--mono-6);
+  background-color:  var(--buttonColor-red2-red1);
+  border-color:  var(--buttonColor-red2-red1);
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: var(--mono-6);
+  background-color:  var(--buttonColor-red2-red1);
+  border-color:  var(--buttonColor-red2-red1);
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem var(--red-2);
+}
+.btn-secondary{
+  color: var(--mono-6);
+	background-color:var(--buttonColor-mono3-mono4);
+	border-color:  var(--buttonColor-mono3-mono4);
+}
+.btn-secondary:hover{
+  color: var(--mono-6);
+	background-color:  var(--buttonColor-mono2-mono3);
+	border-color: var(--buttonColor-mono2-mono2);
+}
+.btn-secondary:focus, .btn-secondary.focus {
+  color: var(--mono-6);
+  background-color:  var(--buttonColor-mono2-mono3);
+  border-color:  var(--buttonColor-mono2-mono2);
+  box-shadow: 0 0 0 0.2rem var(--mono-2);
+}
+.btn-secondary.disabled, .btn-secondary:disabled {
+  color: var(--mono-6);
+  background-color:  var(--buttonColor-mono2-mono3);
+  border-color:  var(--buttonColor-mono2-mono2);
+}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+  color: var(--mono-6);
+  background-color:  var(--buttonColor-mono2-mono3);
+  border-color:  var(--buttonColor-mono2-mono2);
+}
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem var(--mono-3);
+}

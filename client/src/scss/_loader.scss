@@ -1,0 +1,30 @@
+.loader-container{
+}
+.loader {
+  position: fixed;
+  display: block;
+  z-index: 9;
+  top: 50%;
+  left: 46%;
+  margin: -40px 0 0 -20px;
+  height: 80px;
+  width: 80px;
+  border: 10px solid  #ffffff;
+  border-top-color:var(--red-3);
+  border-left-color:var(--red-4);
+  border-bottom-color:var(--red-4);
+  border-right-color: var(--red-5);
+  border-radius: 80px;
+}
+@keyframes loaderRotate{
+  100% {transform: rotate(360deg);}
+}
+@keyframes loaderFadeIn{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.loader-fadeIn {
+  animation:
+    loaderRotate 1s linear infinite,
+    loaderFadeIn .5s linear forwards;
+}

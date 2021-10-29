@@ -47,26 +47,31 @@ function Nav(props) {
         </button>
         <NavLink exact to="/" className="navbar-brand">EigoPost</NavLink>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
-          <div className="navbar-nav mr-auto mt-lg-0">
+          <div className="navbar-nav me-lg-auto mt-lg-0">
             <NavLink to="/about" className="nav-item nav-link">About</NavLink>
             <NavLink to="/posts" className="nav-item nav-link">Posts</NavLink>
           </div>
           {user ? (
-            <div className="navbar-nav ml-auto">
-              <a className="nav-item nav-link"
-                 onClick={profilePageCheck}>
-                  {user.userName}
-              </a>
-              <ProfilePopover isPopOpen={isPopoverOpen}
-                              setPopOpen={setPopoverOpen}
-                              ref2={ref2}/>
+            <div className="navbar-nav ms-auto">
+              {user.role === Role.User &&
+                <div>
+                <a className="nav-item nav-link"
+                   onClick={profilePageCheck}>
+                    {user.userName}
+                </a>
+                <ProfilePopover isPopOpen={isPopoverOpen}
+                                setPopOpen={setPopoverOpen}
+                                ref2={ref2}
+                />
+                </div>
+              }
               {user.role === Role.Admin &&
-                <NavLink to="/admin" className="nav-item nav-link">Users</NavLink>
+                <NavLink to="/admin" className="nav-item nav-link">Admin</NavLink>
               }
               <a onClick={accountService.logout} className="nav-item nav-link">LogOut</a>
             </div>
           ) : (
-            <div className="navbar-nav ml-auto">
+            <div className="navbar-nav ms-auto">
               <NavLink exact to="/account/login" className="nav-item mr-auto nav-link">Login</NavLink>
               <NavLink exact to="/account/register" className="nav-item mr-auto nav-link">Sign Up</NavLink>
             </div>

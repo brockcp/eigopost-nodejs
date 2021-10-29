@@ -28,18 +28,21 @@ function ForgotPassword() {
                 <Form>
                     <h3 className="account-form-title">Forgot Password</h3>
                     <div className="card-body">
-                        <div className="form-group">
+                        <div className="mb-3">
                             <label>Email</label>
                             <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
                             <ErrorMessage name="email" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-row">
-                            <div className="form-group col">
+                            <div className="mb-3 col">
                                 <button type="submit" disabled={isSubmitting} className="btn btn-primary">
-                                    {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
+                                    {isSubmitting && <span className="ep-spinner ep-spinner-sm mr-1"></span>}
                                     Submit
                                 </button>
-                                <Link to="login" className="btn btn-link color-1d-link">Cancel</Link>
+                                <Link to="/login"
+                                      className="forgot-password-cancel ms-3">
+                                  Cancel
+                                </Link>
                             </div>
                         </div>
                     </div>

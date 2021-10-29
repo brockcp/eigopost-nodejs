@@ -15,7 +15,6 @@ async function insertPost(params, origin){
   post.category = params.category;
   post.userId = params.userName;
   await post.save();
-  console.log('this is the post: ' + post);
 };
 
 async function insertComment(params, origin){
@@ -27,16 +26,11 @@ async function insertComment(params, origin){
   comment.userId = params.userId;
   try{
     await comment.save();
-    console.log(comment);
   }catch(err){
-  console.log('COMMENT SAVE, ' + err)
   }
-  console.log("POST ID IS..." + post._id);
   try{
     post.comments.push(comment._id);
     await post.save();
-    console.log(post);
   }catch(err){
-    console.log('DARNIT POST SAVE,' + err)
   }
 };

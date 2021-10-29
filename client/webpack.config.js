@@ -29,11 +29,11 @@ module.exports = {
         ],
       },
       {
-        test: /\.less$/,
+        test: /\.s[ac]ss$/i,
         use: [
           { loader: 'style-loader' },
           { loader: 'css-loader' },
-          { loader: 'less-loader' }
+          { loader: 'sass-loader' }
         ]
       },
       {
@@ -61,7 +61,7 @@ module.exports = {
   },
   externals:{
     config: JSON.stringify({
-      apiUrl: 'http://localhost:4000'
+      apiUrl: 'https://eigopost.com/api'
     })
   }
 }

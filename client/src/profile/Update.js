@@ -64,50 +64,52 @@ const Update = ({history}) => {
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
             {({ errors, touched, isSubmitting }) => (
               <Form>
-                <h3 className="account-form-title">Update Profile</h3>
-                <div className="card-body">
-                  <div className="form-row">
-                      <div className="form-group col-5">
-                          <label>Username</label>
-                          <Field name="userName" type="text" className={'form-control' + (errors.userName && touched.userName ? ' is-invalid' : '')} />
-                          <ErrorMessage name="userName" component="div" className="invalid-feedback" />
-                      </div>
-                  </div>
-                  <div className="form-group">
-                      <label>Email</label>
-                      <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
-                      <ErrorMessage name="email" component="div" className="invalid-feedback" />
-                  </div>
-                  <h3 className="pt-3">Change Password</h3>
-                  <p>Leave blank to keep the same password</p>
-                  <div className="form-row">
-                      <div className="form-group col">
-                          <label>Password</label>
-                          <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
-                          <ErrorMessage name="password" component="div" className="invalid-feedback" />
-                      </div>
-                      <div className="form-group col">
-                          <label>Confirm Password</label>
-                          <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
-                          <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
-                      </div>
-                  </div>
-                  <div className="form-group">
-                      <button type="submit" disabled={isSubmitting} className="btn btn-primary mr-2">
-                          {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
-                          Update
-                      </button>
-                  </div>
-                  <hr />
-                  <h3 className="pt-3">Delete Account</h3>
-                  <div className="form-group">
-                      <button type="button" onClick={() => deleteModal()} className="btn btn-danger" style={{ width: '75px' }} disabled={isDeleting}>
-                          {isDeleting
-                              ? <span className="spinner-border spinner-border-sm"></span>
-                              : <span>Delete</span>
-                          }
-                      </button>
-                      <Link to="." className="color-1 color-1d-link-link pl-3">Cancel</Link>
+                <div className="accounts-form">
+                  <h3 className="account-form-title">Update Profile</h3>
+                  <div className="card-body">
+                    <div className="form-row">
+                        <div className="mb-3 col-5">
+                            <label>Username</label>
+                            <Field name="userName" type="text" className={'form-control' + (errors.userName && touched.userName ? ' is-invalid' : '')} />
+                            <ErrorMessage name="userName" component="div" className="invalid-feedback" />
+                        </div>
+                    </div>
+                    <div className="mb-3">
+                        <label>Email</label>
+                        <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
+                        <ErrorMessage name="email" component="div" className="invalid-feedback" />
+                    </div>
+                    <h3 className="pt-3">Change Password</h3>
+                    <p>Leave blank to keep the same password</p>
+                    <div className="form-row">
+                        <div className="mb-3 col">
+                            <label>Password</label>
+                            <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
+                            <ErrorMessage name="password" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="mb-3 col">
+                            <label>Confirm Password</label>
+                            <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
+                            <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
+                        </div>
+                    </div>
+                    <div className="mb-3">
+                        <button type="submit" disabled={isSubmitting} className="btn btn-primary mr-2">
+                            {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
+                            Update
+                        </button>
+                    </div>
+                    <hr />
+                    <h3 className="pt-3">Delete Account</h3>
+                    <div className="mb-3">
+                        <button type="button" onClick={() => deleteModal()} className="btn btn-danger" style={{ width: '75px' }} disabled={isDeleting}>
+                            {isDeleting
+                                ? <span className="spinner-border spinner-border-sm"></span>
+                                : <span>Delete</span>
+                            }
+                        </button>
+                        <Link to="." className="account-link ps-3">Cancel</Link>
+                    </div>
                   </div>
                 </div>
               </Form>

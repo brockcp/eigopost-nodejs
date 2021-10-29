@@ -94,11 +94,11 @@ function Alert({ id, fade }) {
     if (!alerts.length) return null;
 
     return (
-        <div className="container-fluid pl-0 pr-0">
+        <div className="container-fluid px-0">
             <div className="">
                 {alerts.map((alert, index) =>
                     <div key={index} className={cssClasses(alert)}>
-                        <a className="close" onClick={() => removeAlert(alert)}>&times;</a>
+                        <a className="btn-close" onClick={() => removeAlert(alert)}></a>
                         <span dangerouslySetInnerHTML={{__html: alert.message}}></span>
                     </div>
                 )}

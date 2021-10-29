@@ -11,40 +11,33 @@ const UserComments = () => {
   const {data, error, loading} = hookFetch(`${config.apiUrl}/posts/userComments/${user.id}`)
 
   return(
-    <div className="container pt-2">
-      <div className="row">
-        {error && <h5>Oops. No user comments</h5>}
-        <div>
-         {loading ? (
-            <Loader/>
-           ):(
-            <div>
-              <div className="d-flex justify-content-between align-items-center">
-                <h4 className="color-3d1">
-                  Comments
-                  (<span className="color-1d">{data.length}</span>)
-                </h4>
+    <div className="container user-comments px-0 pt-2">
+      {error && <h5>Oops. No user comments</h5>}
+      {loading ? (
+        <Loader/>
+        ):(
+          <div className="row">
+            <h5 className="">
+              Comments
+              (<span className="activity-count">{data.length}</span>)
+            </h5>
+            {data.map((x,y)=>(
+              <div key={y}>
+                <Link to={"/posts/" + x.postId[0].slug} //[0] needed for link to not return 404 but will error if parent post deleted
+                      className=""
+                >
+                  <h6 className="d-inline">{x.comment_body.length < 30 ?
+                    x.comment_body : x.comment_body.substr(0,30) + `...`}
+                  </h6>
+                  &emsp;
+                  <span className="score">{x.score}votes</span>
+                  <span className="date"> posted {moment(x.createdAt).format('MM/DD/YYYY')}</span>
+                </Link>
               </div>
-              {data.map((x,y)=>(
-                <div key={y}>
-                  <Link to={"/posts/" + x.postId[0].slug}
-                        className="color-1d-link"
-                  >
-                    <h5 className="d-inline color-3d1">{x.comment_body.length < 30 ?
-                      x.comment_body : x.comment_body.substr(0,30) + `...`}
-                    </h5>
-                    &emsp;
-                    <span className="color-3">{x.score}votes</span>
-                    <span className="color-3"> posted {moment(x.createdAt).format('MM/DD/YYYY')}</span>
-                  </Link>
-                </div>
-              ))}
-              <hr />
-            </div>
-           )
-         }
-        </div>
-      </div>
+            ))}
+          </div>
+        )
+      }
     </div>
   );
 }

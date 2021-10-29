@@ -38,11 +38,11 @@ const ModalSendSub = ({ style, sendData, closeModal, statement }) => (
       <h5></h5>
     </div>
     <div className="ep-modal-footer">
-      <button type="button" className="btn btn-secondary mr-1"
+      <button type="button" className="btn btn-secondary me-2"
               onClick={sendData}>
         yes, post
       </button>
-      <button type="button" className="btn btn-primary"
+      <button type="button" className="btn btn-primary ps-2"
               onClick={closeModal}>
         go back
       </button>

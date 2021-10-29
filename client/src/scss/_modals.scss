@@ -1,0 +1,38 @@
+.ep-modal {
+  display: block;
+  position: fixed;
+  width: 270px;
+  height: 420px;
+  top: calc(40% - 150px);
+  left: calc(50% - 135px);
+  padding: 40px;
+  z-index: 90;
+  color: var(--mono-6);
+  background: var(--bgColor-red2-blue3);
+}
+@media (min-width:413px){
+  .ep-modal{
+    width:400px;
+    height:300px;
+    left: calc(50% - 200px);
+  }
+}
+.ep-modal-title{
+  display:inline-block;
+  width:90%;
+}
+.ep-modal-icon-container{
+  display:inline-block;
+  width:10%;
+  vertical-align: top;
+  padding-top:.5rem;
+  cursor:pointer;
+}
+.ep-modal-body{
+  padding: 2rem 0;
+}
+.ep-modal-body h5{
+}
+.ep-modal-footer{
+  margin-left:5px;
+}

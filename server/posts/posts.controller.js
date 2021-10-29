@@ -13,54 +13,52 @@ module.exports = postRouter;
 postRouter.post('/new-post', registerPostSchema, registerPost);
 postRouter.post("/new-comment/:slug", registerCommentSchema, registerComment);
 postRouter.put('/comment/upvote/:commentId', async(req, res) => {
-    let upvotedbyId = req.body.user;
-    console.log('user is:' + upvotedbyId)
-    let commentId = req.params.commentId;
-    console.log('comment is:' + commentId)
-    let response = {};
-    try {
-      let user = await Account.findById(upvotedbyId);
-      if (user) {
-        let comment = await Comment.findById(commentId);
-        if (comment) {
-          let allUpvotes = comment.upvotedby.map((obj) => obj.toString());
-          let allDownvotes = comment.downvotedby.map((obj) => obj.toString());
-          let operator = allUpvotes.includes(upvotedbyId) ? '$pull' : '$addToSet';
-          let updatedComment = await Comment.findByIdAndUpdate( // Add/Remove that upvote to the post
-             commentId,
-             { [operator]: { upvotedby: upvotedbyId } },
-             { new: true }
-          );
-          if (allDownvotes.includes(upvotedbyId)) { // If already downvoted, then remove the downvote
-            updatedComment = await Comment.findByIdAndUpdate(
-             commentId,
-             { $pull: { downvotedby: upvotedbyId } },
-             { new: true }
-            );
-          }
-          let score =updatedComment.upvotedby.length - updatedComment.downvotedby.length; //update the score
+  let upvotedbyId = req.body.user;
+  let commentId = req.params.commentId;
+  let response = {};
+  try {
+    let user = await Account.findById(upvotedbyId);
+    if (user) {
+      let comment = await Comment.findById(commentId);
+      if (comment) {
+        let allUpvotes = comment.upvotedby.map((obj) => obj.toString());
+        let allDownvotes = comment.downvotedby.map((obj) => obj.toString());
+        let operator = allUpvotes.includes(upvotedbyId) ? '$pull' : '$addToSet';
+        let updatedComment = await Comment.findByIdAndUpdate( // Add/Remove that upvote to the post
+           commentId,
+           { [operator]: { upvotedby: upvotedbyId } },
+           { new: true }
+        );
+        if (allDownvotes.includes(upvotedbyId)) { // If already downvoted, then remove the downvote
           updatedComment = await Comment.findByIdAndUpdate(
-            commentId,
-            { score },
-            { new: true }
+           commentId,
+           { $pull: { downvotedby: upvotedbyId } },
+           { new: true }
           );
-          response.success = true; // Send updated comment back to client for storing/display
-          response.comment = updatedComment;
-          res.json(response);
-        } else {
-          response.message = `The user doesnt exists`;
-          res.json(response);
         }
+        let score =updatedComment.upvotedby.length - updatedComment.downvotedby.length; //update the score
+        updatedComment = await Comment.findByIdAndUpdate(
+          commentId,
+          { score },
+          { new: true }
+        );
+        response.success = true; // Send updated comment back to client for storing/display
+        response.comment = updatedComment;
+        res.json(response);
       } else {
-        response.message = `The user doesnt exist or banned`;
+        response.message = `The user doesnt exists`;
         res.json(response);
       }
-    }
-    catch (error) {
-      response.message = `Server encountered an error while upvoting comment ${error}`;
+    } else {
+      response.message = `The user doesnt exist or banned`;
       res.json(response);
     }
-  });
+  }
+  catch (error) {
+    response.message = `Server encountered an error while upvoting comment ${error}`;
+    res.json(response);
+  }
+});
 postRouter.put('/comment/downvote/:commentId', async(req, res) => {
   let downvotedbyId = req.body.user;
   let commentId = req.params.commentId;
@@ -186,7 +184,6 @@ function registerCommentSchema(req, res, next){
     userId: Joi.string().required(),
     postId: Joi.string().required()
   });
-  console.log("COMMENTSCHEMA HERE..." + schema);
   validateRequest(req, next, schema);
 }
 function registerComment(req, res, next){

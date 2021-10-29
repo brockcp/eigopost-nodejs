@@ -67,20 +67,20 @@ function ResetPassword({ history }) {
                     <Form>
                     <h3 className="account-form-title">Reset Password</h3>
                     <div className="card-body">
-                        <div className="form-group">
+                        <div className="mb-3">
                             <label>Password</label>
                             <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
                             <ErrorMessage name="password" component="div" className="invalid-feedback" />
                         </div>
-                        <div className="form-group">
+                        <div className="mb-3">
                             <label>Confirm Password</label>
                             <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
                             <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-row">
-                            <div className="form-group col">
+                            <div className="mb-3 col">
                                 <button type="submit" disabled={isSubmitting} className="btn btn-primary">
-                                    {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
+                                    {isSubmitting && <span className="ep-spinner ep-spinner-sm mr-1"></span>}
                                     Reset Password
                                 </button>
                                 <Link to="/login" className="btn btn-link">Cancel</Link>

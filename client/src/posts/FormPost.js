@@ -20,7 +20,7 @@ const FormPost = ({history}) => {
   function postSend(fields){
     postsComments.postRegister(fields)
       .then(() => {
-        alertService.success('Your post has been posted', { keepAfterRouteChange: true });
+        alertService.success('Your post has been received', { keepAfterRouteChange: true });
         history.replace('/posts');
       })
       .catch(error => {
@@ -51,11 +51,11 @@ const FormPost = ({history}) => {
               >
                 {({ errors, touched, isSubmitting }) => (
                     <Form>
-                       <h3 className="new-form-title color-1">New Post</h3>
+                       <h3 className="new-form-title">New Post</h3>
                        <hr />
                        <div className="card-body">
                        <div className="form-row">
-                            <div className="form-group col-12">
+                            <div className="mb-3 col-12">
                               <label>Category:</label>
                               <Field name="category" as="select" className={'form-control' + (errors.category && touched.category ? ' is-invalid' : '')}>
                                 <option value=""></option>
@@ -67,21 +67,21 @@ const FormPost = ({history}) => {
                             </div>
                         </div>
                            <div className="form-row">
-                                <div className="form-group col-12">
+                                <div className="mb-3 col-12">
                                   <label>Title:</label>
                                   <Field name="post_title" type="text" className={'form-control' + (errors.post_title && touched.post_title ? ' is-invalid' : '')} />
                                   <ErrorMessage name="post_title" component="div" className="invalid-feedback" />
                                 </div>
                             </div>
                             <div className="form-row">
-                                <div className="form-group col-12">
+                                <div className="mb-3 col-12">
                                   <label>Post:</label>
                                   <Field name="post_body" type="text" component="textarea" rows="8" className={'form-control' + (errors.post_body && touched.post_body ? ' is-invalid' : '')} />
                                   <ErrorMessage name="post_body" component="div" className="invalid-feedback" />
                                 </div>
                             </div>
                             <div className="form-row">
-                                <div className="form-group">
+                                <div className="mb-3">
                                     <button type="submit" disabled={isSubmitting} className="btn btn-primary">
                                       {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
                                       Submit Post

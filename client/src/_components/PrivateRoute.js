@@ -10,9 +10,9 @@ function PrivateRoute({component: Component, roles, ...rest}) {
         return <Redirect to={{ pathname: '/account/login'}} />
       }
       if (roles && roles.indexOf(user.role) === -1) {
-        return <Redirect to={{ pathname: '/admin'}} />
+        return <Redirect to={{ pathname: '/unauthorized'}} />
       }
-      // if authorized return component
+      // if authorized as ADMIN return component
       return <Component {...props} />
     }} />
   );

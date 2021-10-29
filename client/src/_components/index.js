@@ -14,3 +14,5 @@ export * from './ProfilePopover';
 export * from './SkeletonEffects';
 export * from './SkeletonPosts';
 export * from './SkeletonPostsTimeout';
+export * from './ThemeToggle';
+export * from './Unauthorized';

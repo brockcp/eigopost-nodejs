@@ -5,6 +5,7 @@ import {hookFetch} from '../_helpers/hook-fetch';
 import moment from 'moment';
 import {Loader} from '../_components/Loader';
 import {Error} from '../_components/Error';
+import {NotFound} from '../_components/NotFound';
 import Comments from './Comments';
 
 const Post = (props) => {
@@ -15,7 +16,7 @@ const Post = (props) => {
     return <Error/>;
   }
   return(
-    <div className="container pt-3">
+    <div className="container post pt-3">
       <div className="row">
         <div className="col-sm-12 col-lg-8">
           {loading ? (
@@ -23,33 +24,34 @@ const Post = (props) => {
             ):(
             <div>
              {data ? (
-               <div className="">
+               <div className="fade-in">
                   <div className="d-flex justify-content-between align-items-center">
-                    <h3 className="mb-0 color-1d">{data.post_title}</h3>
-                    <NavLink to="/posts" className="color-1d-link">
+                    <h2 className="mb-0">{data.post_title}</h2>
+                    <NavLink to="/posts"
+                             className="back-to-posts">
                        Back to Posts
                     </NavLink>
                   </div>
                     <div className="post-box">
-                      <small className="color-3l">post by
-                        <span className="color-1">
+                      <small className="post-info">post by
+                        <span className="user-name">
                           &emsp;
                           {data.userId.length ?
                             data.userId[0].userName
                             :
-                            "abcUser"
+                            "user123"
                           }
                         </span>
                       </small>
-                      <small className="color-3l"> on&emsp;
+                      <small className="post-date"> on&emsp;
                        {moment(data.createdAt).format('MM/DD/YYYY')}
                       </small>
-                      <p className="lead color-3d1">{data.post_body}</p>
+                      <p className="">{data.post_body}</p>
                     </div>
                   <Comments postId={data._id}/>
                </div>
                ):(
-               <Redirect to="/not-found"/>
+               <NotFound/>
              )}
             </div>
           )}

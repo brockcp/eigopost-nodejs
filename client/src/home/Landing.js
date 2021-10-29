@@ -8,18 +8,18 @@ const Landing = () => {
   const user = accountService.userValue;
   return(
     <>
-      <div className="container-fluid pl-0 pr-0">
+      <div className="container-fluid px-0">
         <div className="jumbotron text-center">
-          <h1 className="inline-b-768 color-1l font-responsive-logo">
+          <h1 className="inline-b-768 font-responsive-logo">
             EigoPost
-            {!user && <span className="color-3d1 lang-ja font-responsive-sublogo"
+            {!user && <span className="lang-ja font-responsive-sublogo"
                             lang="ja">
               へようこそ!
                       </span>
             }
           </h1>
-          <img src={logo} className="inline-b-768 logo fadein" alt="logo"/>
-          <p className="lead max-w-700 color-3d font-responsive-ja">
+          <img src={logo} className="inline-b-768 logo fade-in" alt="logo"/>
+          <p className="lead max-w-700 font-responsive-ja">
              <span className='lang-ja' lang="ja">エイゴポストは、</span>
              <span className='lang-ja' lang="ja">日本人の</span>
              <span className='lang-ja' lang="ja">みなさんが、</span>
@@ -31,10 +31,10 @@ const Landing = () => {
              <span className='lang-ja' lang="ja">サイトです。</span>
           </p>
         </div>
-        <div className="container-xl">
+        <div className="container-fluid landing-sub">
           <div className="row pt-4 pb-4">
             <div className="col-sm-4">
-              <p className="lead text-center color-3 font-responsive-ja">
+              <p className="lead text-center font-responsive-ja">
                 <span className='lang-ja' lang="ja">英語で言いたい</span>
                 <span className='lang-ja' lang="ja">のに、</span>
                 <span className='lang-ja' lang="ja">何と言ったらいい</span>
@@ -46,7 +46,7 @@ const Landing = () => {
               </p>
             </div>
             <div className="col-sm-4">
-              <p className="lead text-center color-3 font-responsive-ja">
+              <p className="lead text-center font-responsive-ja">
                 <span className='lang-ja' lang="ja">英語を聞いて、</span>
                 <span className='lang-ja' lang="ja">理解できない</span>
                 <span className='lang-ja' lang="ja">ときは</span>
@@ -54,7 +54,7 @@ const Landing = () => {
               </p>
             </div>
             <div className="col-sm-4">
-              <p className="lead text-center color-3 font-responsive-ja">
+              <p className="lead text-center font-responsive-ja">
                 <span className='lang-ja' lang="ja">英語を上達</span>
                 <span className='lang-ja' lang="ja">させたい人の</span>
                 <span className='lang-ja' lang="ja">ヘルプをしたく</span>
