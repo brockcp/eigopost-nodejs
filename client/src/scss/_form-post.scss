@@ -1,0 +1,19 @@
+.new-post-form{
+  width:98%;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 8px;
+  background: var(--bgForm);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 576px) {
+  .new-post-form{
+    max-width: 500px;
+  }
+}
+.new-post-form h3{
+  color: var(--red-4);
+}
+.new-post-form label{
+  color: var(--fontColor-m1-m6);
+}

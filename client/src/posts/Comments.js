@@ -102,7 +102,7 @@ const Comments= (props) => {
                           </div>
                      </div>
                   ))}
-                  {commentsData < 1 && <h5 className="no-comments">This post has no comments.</h5>}
+                  {commentsData < 1 && <h5 className="no-comments">Be the first to comment on this post.</h5>}
               </div>
               <FormComment postId={props.postId}/>
             </div>

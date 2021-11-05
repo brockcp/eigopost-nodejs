@@ -26,7 +26,7 @@ const ModalDelete = (props) => {
 
 const ModalDeleteSub = ({ style, deleteModal, closeModal }) => (
   <animated.div style={style}
-  className="ep-modal">
+                className="ep-modal">
     <div className="ep-modal-header">
       <h3 className="ep-modal-title">
        Are you sure you want to delete your account?
@@ -36,11 +36,11 @@ const ModalDeleteSub = ({ style, deleteModal, closeModal }) => (
       <h5></h5>
     </div>
     <div className="ep-modal-footer">
-      <button className="btn btn-secondary me-2"
+      <button className="btn btn-primary me-2"
               onClick={deleteModal}>
         yes, delete
       </button>
-      <button className="btn btn-primary ps-2"
+      <button className="btn btn-secondary ps-2"
               onClick={closeModal}>
         go back
       </button>

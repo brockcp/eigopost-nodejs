@@ -23,7 +23,7 @@ const Posts = ({history}) => {
     <div className="container posts fade-in pt-3 pb-5">
       <div className="row">
         <div className="col-sm-12 col-lg-8">
-          <div className="d-flex justify-content-between align-items-center">
+          <div className="d-flex justify-content-between align-items-center mb-2">
             <h1 className="">EigoPost
               <small className="s">s</small>
             </h1>
@@ -61,6 +61,8 @@ const Posts = ({history}) => {
             </div>
           ))}
           {data === null && [1,2,3,4].map(x => <SkeletonPosts key={x}/>)}
+        </div>
+        <div className="col-sm-12 col-lg-4 posts-sidebar">
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ const Landing = () => {
             }
           </h1>
           <img src={logo} className="inline-b-768 logo fade-in" alt="logo"/>
-          <p className="lead max-w-700 font-responsive-ja">
+          <p className="max-w-700 font-responsive-ja">
              <span className='lang-ja' lang="ja">エイゴポストは、</span>
              <span className='lang-ja' lang="ja">日本人の</span>
              <span className='lang-ja' lang="ja">みなさんが、</span>
@@ -34,7 +34,7 @@ const Landing = () => {
         <div className="container-fluid landing-sub">
           <div className="row pt-4 pb-4">
             <div className="col-sm-4">
-              <p className="lead text-center font-responsive-ja">
+              <p className="text-center font-responsive-ja">
                 <span className='lang-ja' lang="ja">英語で言いたい</span>
                 <span className='lang-ja' lang="ja">のに、</span>
                 <span className='lang-ja' lang="ja">何と言ったらいい</span>
@@ -45,16 +45,18 @@ const Landing = () => {
                 <span className='lang-ja' lang="ja">ありませんか？</span>
               </p>
             </div>
+            <hr className="landing-sub-break" />
             <div className="col-sm-4">
-              <p className="lead text-center font-responsive-ja">
+              <p className="text-center font-responsive-ja">
                 <span className='lang-ja' lang="ja">英語を聞いて、</span>
                 <span className='lang-ja' lang="ja">理解できない</span>
                 <span className='lang-ja' lang="ja">ときは</span>
                 <span className='lang-ja' lang="ja">ありませんか？</span>
               </p>
             </div>
+            <hr className="landing-sub-break" />
             <div className="col-sm-4">
-              <p className="lead text-center font-responsive-ja">
+              <p className="text-center font-responsive-ja">
                 <span className='lang-ja' lang="ja">英語を上達</span>
                 <span className='lang-ja' lang="ja">させたい人の</span>
                 <span className='lang-ja' lang="ja">ヘルプをしたく</span>

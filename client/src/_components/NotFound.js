@@ -9,7 +9,7 @@ const NotFound = () => {
              className="logo-404 fade-in"
              alt="logo"
         />
-        <h3 className="">Oh 404! We Cannot find that page!</h3>
+        <h3 className="">Oh 404! We cannot find that page!</h3>
     </div>
   );
 }

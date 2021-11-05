@@ -102,7 +102,7 @@ const Update = ({history}) => {
                     <hr />
                     <h3 className="pt-3">Delete Account</h3>
                     <div className="mb-3">
-                        <button type="button" onClick={() => deleteModal()} className="btn btn-danger" style={{ width: '75px' }} disabled={isDeleting}>
+                        <button type="button" onClick={() => deleteModal()} className="btn btn-primary" style={{ width: '75px' }} disabled={isDeleting}>
                             {isDeleting
                                 ? <span className="spinner-border spinner-border-sm"></span>
                                 : <span>Delete</span>

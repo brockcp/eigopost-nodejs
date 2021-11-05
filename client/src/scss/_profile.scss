@@ -1,15 +1,22 @@
+.profile-container{
+  max-width:700px;
+  margin: 0 auto;
+  padding:1rem;
+}
 .profile-details h3,
 .profile-details h4{
-  color: var(--fontColor-red2-red3);
+  color: var(--red-3);
 }
 .profile-details td{
-  color: var(--fontColor-mono2-mono6);
+  width: 75px;
+  color: var(--fontColor-m1-m6);
+  font-size: 1.2rem;
 }
 .user-posts h5,
 .user-comments h5,
 .user-votes-up h5,
 .user-votes-down h5{
-  color: var(--fontColor-mono2-mono6);
+  color: var(--fontColor-m1-m6);
 }
 .user-posts .activity-count,
 .user-comments .activity-count,
@@ -19,14 +26,14 @@
 .user-comments h6,
 .user-votes-up h6,
 .user-votes-down h6{
-  color: var(--fontColor-red2-red3);
+  color: var(--red-5);
 }
 .user-comments .score{
-  color: var(--fontColor-mono3-mono5);
+  color: var(--fontColor-m1-m6);
 }
 .user-posts .date,
 .user-comments .date,
 .user-votes-up .date,
 .user-votes-down .date{
-  color: var(--fontColor-mono2-mono6);
+  color: var(--fontColor-m1-m6);
 }

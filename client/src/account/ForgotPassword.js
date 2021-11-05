@@ -39,7 +39,7 @@ function ForgotPassword() {
                                     {isSubmitting && <span className="ep-spinner ep-spinner-sm mr-1"></span>}
                                     Submit
                                 </button>
-                                <Link to="/login"
+                                <Link to="/account/login"
                                       className="forgot-password-cancel ms-3">
                                   Cancel
                                 </Link>

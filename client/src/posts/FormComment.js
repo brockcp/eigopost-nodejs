@@ -34,9 +34,9 @@ const FormComment = (props) => {
       });
   }
   return (
-    <div className="container comment-form fade-in pt-4 text-center">
+    <div className="comment-form fade-in pt-4 text-center">
       {user ? (
-        <div className="container pt-4 fade-in">
+        <div className="pt-2 fade-in">
           <Formik
             initialValues={{
               comment_body: '',
@@ -77,9 +77,9 @@ const FormComment = (props) => {
           </Formik>
         </div>
       ):(
-        <div className="container p-4 fade-in">
+        <div className="p-4 fade-in">
           <h5 className="guest-message">Would you like to comment? Please sign in or sign up.</h5>
-          <Link to={'/account/login'} className="btn btn-secondary m-1">Sign in</Link>
+          <Link to={'/account/login'} className="btn btn-primary m-1">Sign in</Link>
           <Link to={'/account/register'} className="btn btn-primary m-1">Sign up</Link>
         </div>
       )}

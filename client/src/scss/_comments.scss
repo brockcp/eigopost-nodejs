@@ -1,0 +1,33 @@
+.comments h4{
+  color: var(--red-3);
+}
+.comments-box{
+  padding:.5rem;
+  border-top:1px solid  var(--border1);
+  border-left:1px solid  var(--border1);
+  border-right:1px solid  var(--border1);
+}
+.comments-box:last-child{
+  border-bottom:1px solid  var(--border1);
+}
+.comments p{
+  color: var(--fontColor-m1-m6);
+}
+.comments .comment-info,
+.comments .comment-date{
+  color: var(--fontColor-m1-m6);
+}
+.comments .user-name{
+  color: var(--red-4);
+}
+.comments .voting-box img:hover{
+  cursor:pointer
+}
+.comments .votes {
+  text-align: center;
+  color: var(--red-3);
+  line-height: 1.2rem;
+}
+.comments .no-comments{
+  color: var(--red-4);
+}

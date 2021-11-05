@@ -1,15 +1,15 @@
 .navbar{
-	background-color: var(--bgColor-red3-blue1) !important;
-	border-bottom: 1px solid  var(--hold);
+	background-color: var(--bgNavbar) !important;
+	//border-bottom: 1px solid  var(--mono-6);
   padding: 0rem 1.5rem !important;
 }
 .navbar .navbar-brand,
 .nav-link, a.nav-link{
-  color:  var(--fontColor-mono5-mono5) !important
+  color:  var(--mono-6) !important
 }
 .navbar .navbar-brand:hover,
 .nav-link:hover, a.nav-link:hover{
-  color:  var(--fontColor-mono6-mono6) !important;
+  color:  var(--mono-6) !important;
 	cursor: pointer;
 }
 @media (min-width: 768px){

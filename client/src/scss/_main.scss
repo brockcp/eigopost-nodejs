@@ -1,21 +1,10 @@
 html, body{
   font-size:100%;
 	font-family: 'Helvetica', Times, serif;
-  background: var(--bgColor-mono6-blue2);
+  background: var(--bgMain);
 }
 nav{
   height:50px;
-}
-footer{
-  min-height:100px;
-  background-color: var(--bgColor-mono2-blue1);
-}
-footer a,
-footer p{
-  color: var(--fontColor-mono5-mono5);
-}
-footer a:hover{
-  color: var(--fontColor-mono6-mono6);
 }
 .global-mh{
   min-height:calc(100vh - 240px)
@@ -23,38 +12,13 @@ footer a:hover{
 a, a:hover{
   text-decoration: none
 }
-.font-s-20{
-  font-size:20px !important
-}  //New Post <p> login or signup
-.font-s-30{
-  font-size:30px !important
-}  //landing intro text
-.list-style-n{
-  list-style-type: none;
-} //About Page
+
 @keyframes fadeIn {
   0% {opacity: 0;}
   100% {opacity: 1;}
 }
 .fade-in{
   animation: fadeIn .5s linear forwards !important;
-}
-
-.about h1,
-.contact h1,
-.terms h1{
-  color: var(--fontColor-red2-red2);
-}
-.about small{
-  color: var(--fontColor-mono2-mono6);
-}
-.about h4{
-  color: var(--fontColor-mono3-mono5);
-}
-.about p,
-.contact p,
-.terms p{
-  color: var(--fontColor-mono2-mono6);
 }
 
 //COMPONENT - NOT FOUND
@@ -69,5 +33,5 @@ a, a:hover{
   }
 }
 .not-found h3{
-  color: var(--fontColor-mono2-mono6);
+  color: var(--mono-6);
 }

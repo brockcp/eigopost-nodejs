@@ -9,11 +9,11 @@
   margin: -40px 0 0 -20px;
   height: 80px;
   width: 80px;
-  border: 10px solid  #ffffff;
-  border-top-color:var(--red-3);
-  border-left-color:var(--red-4);
-  border-bottom-color:var(--red-4);
-  border-right-color: var(--red-5);
+  border: 10px solid hsl(357, 86%, 50%);
+  border-top-color: hsl(357, 86%, 60%);
+  border-left-color: hsl(357, 86%, 70%);
+  border-bottom-color: hsl(357, 86%, 80%);
+  border-right-color: hsl(357, 86%, 90%);
   border-radius: 80px;
 }
 @keyframes loaderRotate{

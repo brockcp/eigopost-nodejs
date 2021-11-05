@@ -7,8 +7,7 @@
   left: calc(50% - 135px);
   padding: 40px;
   z-index: 90;
-  color: var(--mono-6);
-  background: var(--bgColor-red2-blue3);
+  background: var(--bgModal);
 }
 @media (min-width:413px){
   .ep-modal{
@@ -19,14 +18,22 @@
 }
 .ep-modal-title{
   display:inline-block;
-  width:90%;
+  width:85%;
+}
+h3.ep-modal-title,
+.ep-modal-body h5{
+  color: var(--mono-6);
 }
 .ep-modal-icon-container{
   display:inline-block;
-  width:10%;
+  width:5%;
   vertical-align: top;
-  padding-top:.5rem;
+  padding:.1rem 0 0 .5rem;
   cursor:pointer;
+}
+.ep-modal-icon-container img{
+  width: 25px;
+  height: 25px;
 }
 .ep-modal-body{
   padding: 2rem 0;

@@ -7,14 +7,12 @@ function Profile({match}) {
   document.title = "Eigopost | Profile";
     const {path} = match;
     return (
-      <div className="container">
+      <div className="profile-container">
         <div className="row">
-          <div className="col-sm-12 col-lg-8">
-            <Switch>
-              <Route exact path={path} component={Details} />
-              <Route path={`${path}/update`} component={Update} />
-            </Switch>
-          </div>
+          <Switch>
+            <Route exact path={path} component={Details} />
+            <Route path={`${path}/update`} component={Update} />
+          </Switch>
         </div>
       </div>
     );

@@ -5,11 +5,9 @@ import {accountService} from '@/_services';
 function List({match}) {
   const {path} = match;
   const [users, setUsers] = useState(null);
-
   useEffect(() => {
     accountService.getAll().then(x => setUsers(x));
   }, []);
-
   function deleteUser(id) {
     setUsers(users.map(x => {
       if (x.id === id) { x.isDeleting = true; }
@@ -23,8 +21,10 @@ function List({match}) {
   return (
     <div className="">
       <h1 className="">Users</h1>
-      <p className="">All users from secure (admin only) api end point:</p>
-      <Link to={`${path}/add`} className="btn btn-sm btn-success mb-2">Add User</Link>
+      <Link to={`${path}/add`}
+            className="btn btn-sm btn-primary mb-2">
+        Add User
+      </Link>
       <table className="table table-striped">
         <thead>
           <tr>
@@ -41,8 +41,15 @@ function List({match}) {
               <td>{user.email}</td>
               <td>{user.role}</td>
               <td style={{ whiteSpace: 'nowrap' }}>
-                <Link to={`${path}/edit/${user.id}`} className="btn btn-sm btn-primary mr-1">Edit</Link>
-                <button onClick={() => deleteUser(user.id)} className="btn btn-sm btn-danger" style={{ width: '60px' }} disabled={user.isDeleting}>
+                <Link to={`${path}/edit/${user.id}`}
+                      className="btn btn-sm btn-primary me-1"
+                      style={{width: '60px'}}>
+                  Edit
+                </Link>
+                <button onClick={() => deleteUser(user.id)}
+                        className="btn btn-sm btn-primary"
+                        style={{ width: '60px' }}
+                        disabled={user.isDeleting}>
                   {user.isDeleting
                     ? <span className="spinner-border spinner-border-sm"></span>
                     : <span>Delete</span>
@@ -53,7 +60,8 @@ function List({match}) {
           )}
           {!users &&
             <tr>
-              <td colSpan="4" className="text-center">
+              <td colSpan="4"
+                  className="text-center">
                 <span className="spinner-border spinner-border-lg align-center"></span>
               </td>
             </tr>

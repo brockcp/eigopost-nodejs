@@ -8,7 +8,7 @@ const Admin = ({match}) => {
 
     return (
         <div className="p-4">
-            <div className="container">
+            <div className="container admin">
                 <Switch>
                     <Route exact path={path} component={Overview} />
                     <Route path={`${path}/users`} component={Users} />

@@ -56,6 +56,8 @@ const Post = (props) => {
             </div>
           )}
         </div>
+        <div className="col-sm-12 col-lg-4 post-sidebar">
+        </div>
       </div>
     </div>
   )

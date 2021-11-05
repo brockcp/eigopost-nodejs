@@ -14,7 +14,7 @@
 #menuButton .three{
   width: 1.7rem;
   height: 0.25rem;
-  background:  var(--fontColor-mono6-mono6);
+  background:  var(--mono-6);
   border-radius: 10px;
   transition: all .2s linear;
   transform:rotate(0);
@@ -23,7 +23,7 @@
 #menuButton .one.close{
   transform:rotate(-45deg) translate(-8px, 5px);
   opacity:1;
-  background: var(--fontColor-mono6-mono6);
+  background: var(--mono-6);
   z-index:10
 }
 #menuButton .two.close{
@@ -32,6 +32,6 @@
 #menuButton .three.close{
   transform:rotate(45deg) translate(-7px, -6px);
   opacity:1;
-  background: var(--fontColor-mono6-mono6);
+  background: var(--mono-6);
   z-index:10;
 }

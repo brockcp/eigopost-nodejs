@@ -1,9 +1,9 @@
 .jumbotron{
-  padding:2rem !important; //jumbotron default is 4rem 2rem
-  background-color: var(--bgColor-mono6-blue2);
+  padding:2rem !important; //default is 4rem 2rem
+  background-image: var(--bgLanding);
 }
 .jumbotron h1{
-  color: var(--fontColor-red2-mono4);
+  color: var(--red-4);
 }
 @media (min-width: 768px){
   .inline-b-768{
@@ -11,7 +11,7 @@
   }
 }
 .font-responsive-logo{
-  font-size: 30px;
+  font-size: 40px;
 }
 @media (min-width: 768px){
   .font-responsive-logo{
@@ -43,7 +43,9 @@
 .lang-ja{
   font-family: 'MS PGothic', Osaka, Arial, sans-serif;
   display:inline-block;
-  color: var(--fontColor-mono3-mono5);
+  color: var(--fontColor-m1-m6);
+  font-size: 1.5rem;
+  font-weight: 500;
 }
 .font-responsive-ja{
   font-size:20px;
@@ -54,5 +56,17 @@
   }
 }
 .landing-sub{
-  background: var(--bgColor-blue6-mono3);
+  background: var(--bgLanding2);
+}
+hr.landing-sub-break{
+  width:150px;
+  margin:0 auto 1rem auto;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, var(--mono-5), var(--mono-1), var(--mono-5));
+}
+@media (min-width: 576px){
+  hr.landing-sub-break{
+    display:none;
+  }
 }

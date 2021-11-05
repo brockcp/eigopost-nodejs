@@ -1,65 +1,40 @@
 .posts h1,
-.post h2,
-.comments h4{
-  color: var(--fontColor-red2-red2);
+.posts h2{
+  color: var(--red-5);
 }
 .posts .s{
-  color: var(--fontColor-mono2-mono6);
+  color: var(--fontColor-m3-m4);
 }
-.posts-box,
-.comments-box{
+.posts .posts-error{
+  color: var(--fontColor-m1-m6);
+}
+.posts-box{
   padding:.5rem;
-  //background: var(--color-primary-1);
-  border-top:1px solid  var(--borderColor-mono4-mono5);
-  border-left:1px solid  var(--borderColor-mono4-mono5);
-  border-right:1px solid  var(--borderColor-mono4-mono5);
+  border-top:1px solid  var(--border1);
+  border-left:1px solid  var(--border1);
+  border-right:1px solid  var(--border1);
 }
-.posts-box:last-child,
-.comments-box:last-child{
-  border-bottom:1px solid  var(--borderColor-mono4-mono5);
+.posts-box:last-child{
+  border-bottom:1px solid  var(--border1);
 }
-.post-box{
-  padding:.7rem;
-  border:1px solid  var(--borderColor-mono4-mono5);
-}
-.posts .posts-error,
-.posts h2{
-  color: var(--fontColor-red2-red2);
-}
-.posts p,
-.post p,
-.comments p{
-  color: var(--fontColor-mono2-mono6);
+.posts p{
+  color: var(--fontColor-m1-m6);
 }
 .posts .post-info,
-.post .post-info,
-.comments .comment-info{
-  color: var(--fontColor-mono3-mono5);
-}
 .posts .post-date,
-.post .post-date,
-.comments .comment-date{
-  color: var(--fontColor-mono2-mono6);
-}
-.posts .user-name,
-.post .user-name,
-.comments .user-name{
-  color: var(--fontColor-red2-red2);
-}
-.comments .voting-box img:hover{
-  cursor:pointer
-}
-.comments .votes {
-  text-align: center;
-  color: var(--fontColor-mono2-mono6);
-  line-height: 1.2rem;
-}
 .posts .comment-count{
-  color: var(--fontColor-mono3-mono5);
+  color: var(--fontColor-m3-m4);
 }
-.post .back-to-posts{
-  color: var(--fontColor-red2-mono5);
+.posts .user-name{
+  color: var(--red-5);
 }
-.comments .no-comments{
-  color: var(--fontColor-mono2-mono6);
-}
+// .posts .posts-sidebar{
+//   display: none;
+// }
+// @media (min-width:992px){
+//   .posts .posts-sidebar{
+//     display:block;
+//     border: 1px solid var(--mono-5);
+//     margin-bottom: .05rem;
+//   }
+// }

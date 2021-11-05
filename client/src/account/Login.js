@@ -72,7 +72,7 @@ const Login = ({history}) => {
                   Login
               </button>
               <Link to={"/account/forgot-password"}
-                    className="d-block account-forgot mt-2 ms-3">
+                    className="account-forgot mt-2 ms-3">
                 Forgot Password
               </Link>
             </div>

@@ -51,12 +51,11 @@ const FormPost = ({history}) => {
               >
                 {({ errors, touched, isSubmitting }) => (
                     <Form>
-                       <h3 className="new-form-title">New Post</h3>
-                       <hr />
+                       <h3 className="">New Post</h3>
                        <div className="card-body">
                        <div className="form-row">
                             <div className="mb-3 col-12">
-                              <label>Category:</label>
+                              <label>Category</label>
                               <Field name="category" as="select" className={'form-control' + (errors.category && touched.category ? ' is-invalid' : '')}>
                                 <option value=""></option>
                                 <option value="grammar">grammar</option>
@@ -68,14 +67,14 @@ const FormPost = ({history}) => {
                         </div>
                            <div className="form-row">
                                 <div className="mb-3 col-12">
-                                  <label>Title:</label>
+                                  <label>Title</label>
                                   <Field name="post_title" type="text" className={'form-control' + (errors.post_title && touched.post_title ? ' is-invalid' : '')} />
                                   <ErrorMessage name="post_title" component="div" className="invalid-feedback" />
                                 </div>
                             </div>
                             <div className="form-row">
                                 <div className="mb-3 col-12">
-                                  <label>Post:</label>
+                                  <label>Post</label>
                                   <Field name="post_body" type="text" component="textarea" rows="8" className={'form-control' + (errors.post_body && touched.post_body ? ' is-invalid' : '')} />
                                   <ErrorMessage name="post_body" component="div" className="invalid-feedback" />
                                 </div>
@@ -100,7 +99,7 @@ const FormPost = ({history}) => {
             </div>
           ):(
             <div className="col-sm-12 p-4">
-              <p className="font-s-20 text-center">
+              <p className="text-center">
                 Please login or sign up to post.
               </p>
             </div>

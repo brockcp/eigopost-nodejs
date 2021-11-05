@@ -1,0 +1,92 @@
+.accounts-form{
+  width:98%;
+  margin: 2rem auto;
+  border-radius: 8px;
+  background: var(--bgForm);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 576px) {
+  .accounts-form{
+    max-width: 500px;
+  }
+}
+.account-form-title{
+  font-weight: 500;
+  padding-top: 1.5rem;
+  padding-left:1rem;
+  color: var(--red-4);
+}
+.accounts-form p{
+  color: green;
+}
+.account-form-login{
+  font-weight: 500;
+  padding-left:1rem;
+  color: var(--fontColor-m1-m6);
+}
+.account-link,
+a.account-link,
+a.account-link:hover{
+  color: var(--red-4);
+}
+
+.accounts-form label{
+  color: var(--fontColor-m1-m6);
+}
+.account-terms,
+.account-terms:hover,
+.account-forgot,
+.account-forgot:hover,
+.forgot-password-cancel,
+.forgot-password-cancel:hover{
+  color: var(--red-4);
+}
+
+.form-control{
+  background: var(--bgFormControl);
+  color: var(--fontColor-m1-m6);
+  border: 1px solid  var(--border1) !important;
+  box-shadow: 20 0 0 0 inset !important;
+  outline:none;
+}
+.form-control:focus,
+.form-control:active{
+  background: var(--bgFormControlA);
+  color: var(--fontColor-m1-m6);
+  border: 1px solid var(--border1) !important;
+  box-shadow: 0 0 0 0 inset !important;
+  outline:none;
+}
+.form-check-input:checked{
+  background-color: red !important;
+  border-color: red !important;
+}
+.form-control.is-invalid{
+  border: 1px solid  var(--mono-6);
+  outline:none !important;
+  background-image: none;
+  outline:none;
+}
+.invalid-feedback{
+  color: var(--red-4);
+}
+
+
+@keyframes ep-spinner{
+  to {transform: rotate(360deg);}
+}
+.ep-spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: ep-spinner .75s linear infinite;
+}
+.ep-spinner-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2em;
+}
