@@ -12,11 +12,11 @@
   - Frontend built on the **React** Javascript library
   - Backend built on the **NodeJS** Runtime Environment
   - **ExpressJS** as a backend framework
-  - **Bootstrap4** for styling
+  - **Bootstrap5** for styling
   - **React-Spring** for animations
   - **Axios** for data fetching
   - **Formik** for form handling
-  - **Less** for SCSS preprocessing
+  - **SASS** for SCSS preprocessing
   - **SendGrid** and **NodeMailer** for mail processing
   - **MongoDB(Atlas)** for database functionality
   - **MongooseJS** for object modeling
