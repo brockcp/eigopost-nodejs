@@ -49,8 +49,8 @@ const Register = ({history}) => {
     <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
       {({ errors, touched, isSubmitting }) => (
         <Form>
-          <h3 className="account-form-title">Create an account</h3>
-          <div className='account-form-login'>Already have an account?
+          <h3 className="accounts-form-title">Create an account</h3>
+          <div className='accounts-form-login'>Already have an account?
             <Link to="/account/login"
                   className="account-link"> Sign in</Link>
           </div>

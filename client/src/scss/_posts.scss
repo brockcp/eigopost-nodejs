@@ -10,12 +10,12 @@
 }
 .posts-box{
   padding:.5rem;
-  border-top:1px solid  var(--border1);
-  border-left:1px solid  var(--border1);
-  border-right:1px solid  var(--border1);
+  border-top:1px solid  var(--borderBoxes);
+  border-left:1px solid  var(--borderBoxes);
+  border-right:1px solid  var(--borderBoxes);
 }
 .posts-box:last-child{
-  border-bottom:1px solid  var(--border1);
+  border-bottom:1px solid  var(--borderBoxes);
 }
 .posts p{
   color: var(--fontColor-m1-m6);

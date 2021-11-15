@@ -27,7 +27,9 @@ const ModalAccountsSub = ({ style, closeModal }) => (
   <animated.div style={style}
                 className="ep-modal">
     <div className="ep-modal-header">
-      <h3 className="ep-modal-title">We are so glad you want to participate.</h3>
+      <h3 className="ep-modal-title">
+        We are so glad you want to participate.
+      </h3>
       <div className="ep-modal-icon-container">
         <img src={close}
              onClick={closeModal} />
@@ -42,5 +44,4 @@ const ModalAccountsSub = ({ style, closeModal }) => (
     </div>
   </animated.div>
 );
-
 export {ModalAccounts};

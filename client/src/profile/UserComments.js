@@ -30,7 +30,7 @@ const UserComments = () => {
                     x.comment_body : x.comment_body.substr(0,30) + `...`}
                   </h6>
                   &emsp;
-                  <span className="score">{x.score}votes</span>
+                  <span className="score">{x.score} votes</span>
                   <span className="date"> posted {moment(x.createdAt).format('MM/DD/YYYY')}</span>
                 </Link>
               </div>

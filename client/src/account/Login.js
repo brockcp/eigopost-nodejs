@@ -40,8 +40,8 @@ const Login = ({history}) => {
             onSubmit={onSubmit}>
       {({errors, touched, isSubmitting}) => (
         <Form>
-          <h3 className="account-form-title">Sign in to your account</h3>
-          <div className="account-form-login">Dont have an account?
+          <h3 className="accounts-form-title">Sign in to your account</h3>
+          <div className="accounts-form-login">Dont have an account?
             <Link to={'/account/register'}
                   className="account-link">
                &emsp; Create account

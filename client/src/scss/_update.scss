@@ -1,0 +1,27 @@
+.update-form{
+  width:98%;
+  margin: 2rem auto;
+  border-radius: 8px;
+  background: var(--bgForm);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 576px) {
+  .update-form{
+    max-width: 500px;
+  }
+}
+.update-form-title{
+  font-weight: 500;
+  padding-top: 1.5rem;
+  padding-left:1rem;
+  color: var(--red-4);
+}
+.update-form h3{
+  color: var(--red-4);
+}
+.update-form p{
+  color: var(--fontColor-m3-m4);
+}
+.update-form label{
+  color: var(--fontColor-m1-m6);
+}

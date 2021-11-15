@@ -3,8 +3,7 @@ import {NavLink} from 'react-router-dom';
 import {useTransition, animated} from "react-spring";
 import close from "../assets/icon-close.svg";
 
-const ProfilePopover = (props) => {
-
+const PopoverProfile = (props) => {
   const transitions = useTransition(props.isPopOpen, null, {
     from: { opacity: 0, transform: "translateY(-10px)" },
     enter: { opacity: 1, transform: "translateY(0px)" },
@@ -13,28 +12,29 @@ const ProfilePopover = (props) => {
   return (
     <div className="container-fluid">
       {transitions.map(({ item, key, props: style }) => item && (
-          <ProfilePopoverSub
+          <PopoverProfileSub
             style={style}
             key={key}
             ref2={props.ref2}
             setPop={() => props.setPopOpen(false)}
+            popStyle={props.popoverStyle}
+            popMessage={props.popoverMessage}
           />
       ))}
     </div>
   );
 }
 
-const ProfilePopoverSub = ({ style, ref2, setPop }) => (
+const PopoverProfileSub = ({ style, ref2, setPop, popStyle, popMessage }) => (
   <animated.div style={style}
-                className="popover-container"
+                className="popover-container-profile"
                 ref={ref2}
   >
     <NavLink to="/profile"
-             className="popover"
+             className={popStyle}
              onClick={setPop}>
-      profile & activity
+      {popMessage}
     </NavLink>
   </animated.div>
 );
-
-export {ProfilePopover};
+export {PopoverProfile};

@@ -64,8 +64,8 @@ const Update = ({history}) => {
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
             {({ errors, touched, isSubmitting }) => (
               <Form>
-                <div className="accounts-form">
-                  <h3 className="account-form-title">Update Profile</h3>
+                <div className="update-form">
+                  <h3 className="update-form-title">Update Profile</h3>
                   <div className="card-body">
                     <div className="form-row">
                         <div className="mb-3 col-5">

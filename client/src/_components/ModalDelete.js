@@ -38,7 +38,7 @@ const ModalDeleteSub = ({ style, deleteModal, closeModal }) => (
     <div className="ep-modal-footer">
       <button className="btn btn-primary me-2"
               onClick={deleteModal}>
-        yes, delete
+        delete
       </button>
       <button className="btn btn-secondary ps-2"
               onClick={closeModal}>

@@ -34,7 +34,7 @@
   --extra1: #0D1117;
   --extra2: #161B22;
   --extra3: #282c33;
-  --extra4: #000000;
+  --extra4: #0D252F; //smashing
   --extra5: #000000;
   --extra6: #000000;
 }
@@ -42,41 +42,43 @@
   --bgNavbar: var(--red-5);
   --bgMenu: var(--mono-6);
   --bgMain: var(--mono-6);
-  --bgLanding: linear-gradient(var(--blue-6), var(--mono-5));
-  --bgLanding2: var(--mono-6);
+  --bgLandingMain: linear-gradient(var(--blue-6), var(--mono-5));
+  --bgLandingSub: var(--mono-6);
   --bgFooter: var(--mono-2);
   --bgForm: var(--mono-6);
   --bgFormControl: var(--mono-6);
-  --bgFormControlA: var(--mono-5);
+  --bgFormControlActive: var(--mono-5);
   --bgModal: var(--mono-2);
+  --bgPopoverVote: var(--red-6);
   --bgAlert: var(--red-4);
   --fontColor-m1-m6: var(--mono-1);
   --fontColor-m3-m4: var(--mono-3);
   --buttonPrimary: var(--red-5);
-  --buttonPrimaryH: var(--red-4);
-  --border1: var(--mono-5);
+  --buttonPrimaryHover: var(--red-4);
+  --borderBoxes: var(--mono-5);
   --skeleton: var(--mono-5);
-  --boxShadow1: 0 2px 8px 0 var(--mono-4);
+  --boxShadowMenu: 0 2px 8px 0 var(--mono-4);
   --alertIcon: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff' %3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
 }
 .theme-dark {
   --bgNavbar: var(--blue-3);
-  --bgMenu: var(--blue-2);
+  --bgMenu: var(--blue-3);
   --bgMain: var(--blue-2);
-  --bgLanding: linear-gradient(var(--blue-1), var(--blue-4));
-  --bgLanding2: var(--blue-2);
+  --bgLandingMain: linear-gradient(var(--blue-1), var(--blue-4));
+  --bgLandingSub: var(--blue-2);
   --bgFooter: var(--blue-1);
   --bgForm: var(--blue-3);
   --bgFormControl: var(--blue-3);
-  --bgFormControlA: var(--blue-4);
-  --bgModal: var(--blue-3);
+  --bgFormControlActive: var(--blue-4);
+  --bgModal: var(--blue-4);
+  --bgPopoverVote: var(--blue-4);
   --bgAlert: var(--transparent);
   --fontColor-m1-m6: var(--mono-6);
   --fontColor-m3-m4: var(--mono-4);
   --buttonPrimary: var(--transparent);
-  --buttonPrimaryH: var(--transparent);
-  --border1: var(--blue-4);
+  --buttonPrimaryHover: var(--transparent);
+  --borderBoxes: var(--blue-4);
   --skeleton: var(--blue-3);
-  --boxShadow1: 0 0 0 0 var(--mono-5);
+  --boxShadowMenu: 0 0 0 0 var(--transparent);
   --alertIcon: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff' %3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
 }

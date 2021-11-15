@@ -6,7 +6,7 @@
   z-index: 100;
   padding:1.5rem;
   background: var(--bgMenu);
-  box-shadow: var(--boxShadow1);
+  box-shadow: var(--boxShadowMenu);
   transition: transform .5s cubic-bezier(0, .52, 0, 1);
 }
 #slideMenu.hide {

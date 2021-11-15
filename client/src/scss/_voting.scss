@@ -1,0 +1,17 @@
+.voting-box{
+  margin-left:-15px;
+}
+.thumb-up,
+.thumb-down{
+  height: 18px;
+  width:18px;
+  margin: 0 auto;
+  cursor: pointer;
+  fill: var(--red-6);
+}
+.votes {
+  text-align: center;
+  color: var(--fontColor-m1-m6);
+  line-height: 1.2rem;
+  padding-bottom:.1rem;
+}

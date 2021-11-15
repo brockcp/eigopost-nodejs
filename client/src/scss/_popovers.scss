@@ -1,0 +1,46 @@
+// POPOVER - PROFILE
+.popover-container-profile{
+  position:relative;
+  z-index:100;
+}
+.popover-profile{
+  position:absolute;
+  width: 150px;
+  margin: 20px auto;
+  padding: 15px;
+  top:-25px;
+  left:-50px;
+  background: var(--bgMenu);
+  border-radius: 4px;
+  font-size:16px;
+  box-shadow: var(--boxShadowMenu);
+}
+a.popover-profile{
+  color: var(--fontColor-m1-m6) !important;
+}
+a.popover-profile:hover{
+  color:  var(--fontColor-m1-m6) !important;
+}
+
+
+// POPOVER - VOTE
+.popover-container-Up,
+.popover-container-down{
+  position:relative;
+  z-index:100;
+}
+.popover-Up,
+.popover-down{
+  position: absolute;
+  padding: 7px 10px;
+  top:-50px;
+  left:10px;
+  color: var(--mono-6);
+  background: var(--bgPopoverVote);
+  border-radius: 4px;
+  font-size:16px;
+}
+.popover-down{
+  top:-10px;
+  left:10px;
+}

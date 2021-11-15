@@ -61,7 +61,7 @@ module.exports = {
   },
   externals:{
     config: JSON.stringify({
-      apiUrl: 'https://eigopost.com/api'
+      apiUrl: 'http://localhost:4000'
     })
   }
 }

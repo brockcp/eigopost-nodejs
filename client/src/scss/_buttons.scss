@@ -9,24 +9,24 @@
 }
 .btn-primary:hover{
   color: var(--mono-6);
-	background-color: var(--buttonPrimaryH);
+	background-color: var(--buttonPrimaryHover);
 	border-color: var(--red-2);
 }
 .btn-primary:focus, .btn-primary.focus {
   color: var(--mono-6);
-  background-color: var(--buttonPrimaryH);
+  background-color: var(--buttonPrimaryHover);
   border-color: var(--red-2);
   box-shadow: 0 0 0 0.2rem rgba(230, 0, 0, 0.5);
 }
 .btn-primary.disabled, .btn-primary:disabled {
   color: var(--mono-6);
-  background-color: var(--buttonPrimaryH);
+  background-color: var(--buttonPrimaryHover);
   border-color: var(--red-2);
 }
 .btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle {
   color: var(--mono-6);
-  background-color: var(--buttonPrimaryH);
+  background-color: var(--buttonPrimaryHover);
   border-color: var(--red-2);
 }
 .btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,

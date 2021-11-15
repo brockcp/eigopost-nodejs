@@ -3,7 +3,7 @@ import {NavLink, Route, useLocation } from 'react-router-dom';
 import {accountService} from '@/_services';
 import {useOutsideClick, useOutsideClick2} from '../_helpers/hook-ref';
 import {NavMobile} from './NavMobile';
-import {ProfilePopover} from './ProfilePopover';
+import {PopoverProfile} from './PopoverProfile';
 import {Role} from '@/_helpers';
 
 function Nav(props) {
@@ -55,12 +55,14 @@ function Nav(props) {
             <div className="navbar-nav ms-auto">
               {user.role === Role.User &&
                 <div>
-                <a className="nav-item nav-link"
+                <a className="nav-item nav-link user-link"
                    onClick={profilePageCheck}>
                     {user.userName}
                 </a>
-                <ProfilePopover isPopOpen={isPopoverOpen}
+                <PopoverProfile isPopOpen={isPopoverOpen}
                                 setPopOpen={setPopoverOpen}
+                                popoverStyle={"popover-profile"}
+                                popoverMessage={"profile & activity"}
                                 ref2={ref2}
                 />
                 </div>
