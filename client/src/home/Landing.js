@@ -1,25 +1,24 @@
-import React,{useState} from 'react';
+import React from 'react';
 import {accountService} from '@/_services';
 import logo from '../assets/img-logo-big.png';
 
 const Landing = () => {
   document.title = "エイゴポスト | Welcome";
-  const [name, setName] = useState();
   const user = accountService.userValue;
   return(
-    <>
-      <div className="container-fluid px-0">
-        <div className="jumbotron text-center">
-          <h1 className="inline-b-768 font-responsive-logo">
+    <div className="container-fluid landing">
+        <div className="jumbotron">
+          <h1>
             EigoPost
-            {!user && <span className="lang-ja font-responsive-sublogo"
-                            lang="ja">
+            {!user && <span lang="ja">
               へようこそ!
                       </span>
             }
           </h1>
-          <img src={logo} className="inline-b-768 logo fade-in" alt="logo"/>
-          <p className="max-w-700 font-responsive-ja">
+          <img src={logo}
+               className="logo fade-in"
+               alt="logo"/>
+          <p>
              <span className='lang-ja' lang="ja">エイゴポストは、</span>
              <span className='lang-ja' lang="ja">日本人の</span>
              <span className='lang-ja' lang="ja">みなさんが、</span>
@@ -30,11 +29,11 @@ const Landing = () => {
              <span className='lang-ja' lang="ja">させるための</span>
              <span className='lang-ja' lang="ja">サイトです。</span>
           </p>
-        </div>
+        </div> {/* end jumbotron */}
         <div className="container-fluid landing-sub">
-          <div className="row pt-4 pb-4">
+          <div className="row">
             <div className="col-sm-4">
-              <p className="text-center font-responsive-ja">
+              <p>
                 <span className='lang-ja' lang="ja">英語で言いたい</span>
                 <span className='lang-ja' lang="ja">のに、</span>
                 <span className='lang-ja' lang="ja">何と言ったらいい</span>
@@ -47,7 +46,7 @@ const Landing = () => {
             </div>
             <hr className="landing-sub-break" />
             <div className="col-sm-4">
-              <p className="text-center font-responsive-ja">
+              <p>
                 <span className='lang-ja' lang="ja">英語を聞いて、</span>
                 <span className='lang-ja' lang="ja">理解できない</span>
                 <span className='lang-ja' lang="ja">ときは</span>
@@ -56,7 +55,7 @@ const Landing = () => {
             </div>
             <hr className="landing-sub-break" />
             <div className="col-sm-4">
-              <p className="text-center font-responsive-ja">
+              <p>
                 <span className='lang-ja' lang="ja">英語を上達</span>
                 <span className='lang-ja' lang="ja">させたい人の</span>
                 <span className='lang-ja' lang="ja">ヘルプをしたく</span>
@@ -65,8 +64,7 @@ const Landing = () => {
             </div>
           </div>
         </div>
-      </div>
-    </>
+    </div>
   );
 }
 export {Landing};

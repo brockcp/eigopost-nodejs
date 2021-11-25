@@ -26,15 +26,16 @@ function ForgotPassword() {
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
             {({ errors, touched, isSubmitting }) => (
                 <Form>
+                  <div className="forgot-password">
                     <h3 className="accounts-form-title">Forgot Password</h3>
                     <div className="card-body">
-                        <div className="mb-3">
+                        <div className="form-group">
                             <label>Email</label>
                             <Field name="email" type="text" className={'form-control' + (errors.email && touched.email ? ' is-invalid' : '')} />
                             <ErrorMessage name="email" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-row">
-                            <div className="mb-3 col">
+                            <div className="form-group col">
                                 <button type="submit" disabled={isSubmitting} className="btn btn-primary">
                                     {isSubmitting && <span className="ep-spinner ep-spinner-sm mr-1"></span>}
                                     Submit
@@ -46,6 +47,7 @@ function ForgotPassword() {
                             </div>
                         </div>
                     </div>
+                  </div>
                 </Form>
             )}
         </Formik>

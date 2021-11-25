@@ -11,13 +11,13 @@ const UserVotesDown = () => {
   const {data, error, loading} = hookFetch(`${config.apiUrl}/posts/userVotesDown/${user.id}`)
 
   return(
-    <div className="container user-votes-down px-0 pt-2">
+    <div className="container user-votes-down">
       {error && <h5>Oops. No user downvotes</h5>}
       {loading ? (
         <Loader/>
         ):(
           <div className="row">
-            <h5 className="">
+            <h5>
               DownVotes
               (<span className="activity-count">{data.length}</span>)
             </h5>
@@ -26,7 +26,7 @@ const UserVotesDown = () => {
                 <Link to={"/posts/" + x.postId.slug}
                       className=""
                 >
-                  <h6 className="d-inline">{x.comment_body.length < 30 ?
+                  <h6>{x.comment_body.length < 30 ?
                     x.comment_body : x.comment_body.substr(0,30) + `...`}
                   </h6>
                   <span className="date"> posted {moment(x.createdAt).format('MM/DD/YYYY')}</span>

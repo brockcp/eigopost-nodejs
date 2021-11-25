@@ -7,9 +7,9 @@ import close from "../assets/icon-close.svg";
 const ModalSend = (props) => {
   const {values} = useFormikContext();
   const transitions = useTransition(props.modalVis, null, {
-    from: { opacity: 0, transform: "translateY(-40px)" },
-    enter: { opacity: 1, transform: "translateY(0px)" },
-    leave: { opacity: 0, transform: "translateY(-40px)" }
+    from: { opacity: 0, transform: "translateY(-2.5rem)" },
+    enter: { opacity: 1, transform: "translateY(0rem)" },
+    leave: { opacity: 0, transform: "translateY(-2.5rem)" }
   });
   return (
     <div className="container-fluid">

@@ -65,20 +65,21 @@ function ResetPassword({ history }) {
             <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
                 {({ errors, touched, isSubmitting }) => (
                     <Form>
+                    <div className="reset-password">
                     <h3 className="accounts-form-title">Reset Password</h3>
                     <div className="card-body">
-                        <div className="mb-3">
+                        <div className="form-group">
                             <label>Password</label>
                             <Field name="password" type="password" className={'form-control' + (errors.password && touched.password ? ' is-invalid' : '')} />
                             <ErrorMessage name="password" component="div" className="invalid-feedback" />
                         </div>
-                        <div className="mb-3">
+                        <div className="form-group">
                             <label>Confirm Password</label>
                             <Field name="confirmPassword" type="password" className={'form-control' + (errors.confirmPassword && touched.confirmPassword ? ' is-invalid' : '')} />
                             <ErrorMessage name="confirmPassword" component="div" className="invalid-feedback" />
                         </div>
                         <div className="form-row">
-                            <div className="mb-3 col">
+                            <div className="form-group col">
                                 <button type="submit" disabled={isSubmitting} className="btn btn-primary">
                                     {isSubmitting && <span className="ep-spinner ep-spinner-sm mr-1"></span>}
                                     Reset Password
@@ -87,6 +88,7 @@ function ResetPassword({ history }) {
                             </div>
                         </div>
                         </div>
+                      </div>
                     </Form>
                 )}
             </Formik>

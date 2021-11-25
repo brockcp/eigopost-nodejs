@@ -1,12 +1,13 @@
 #slideMenu {
-  top: 2.5rem;
-  left: .5rem;
   position: fixed;
   overflow: scroll;
+  top: 2.5rem;
+  left: .5rem;
   z-index: 100;
   padding:1.5rem;
+  border-radius: 0.25rem;
   background: var(--bgMenu);
-  box-shadow: var(--boxShadowMenu);
+  border: 1px solid var(--borderMenu);
   transition: transform .5s cubic-bezier(0, .52, 0, 1);
 }
 #slideMenu.hide {
@@ -17,14 +18,14 @@
   overflow: hidden;
 }
 #slideMenu.show a{
-  padding:8px;
-  line-height: 12px;
-  color: var(--fontColor-m1-m6) !important;
+  padding: 0.5rem;
+  line-height: 0.75rem;
+  color: var(--mono-5) !important;
 }
 #slideMenu.show a:hover{
-  color: var(--fontColor-m1-m6) !important;
+  color: var(--mono-6) !important;
 }
-@media (min-width: 576px) {
+@media (min-width: 36rem) {
   #menuButton,
   #slideMenu{
     display: none;

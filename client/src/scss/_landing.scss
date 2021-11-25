@@ -1,71 +1,87 @@
+.landing{
+  padding: 0;
+}
 .jumbotron{
   padding:2rem !important; //default is 4rem 2rem
+  text-align: center;
   background-image: var(--bgLandingMain);
 }
 .jumbotron h1{
   color: var(--red-4);
+  font-size: 3em;
 }
-@media (min-width: 768px){
-  .inline-b-768{
+@media (min-width: 48rem){
+.jumbotron h1{
     display: inline-block;
+    font-size: 3.5em !important;
   }
 }
-.font-responsive-logo{
-  font-size: 40px;
+.jumbotron h1 span{
+  font-family: 'MS PGothic', Osaka, Arial, sans-serif;
+  color: var(--fontColor-m2-m4);
+  font-size: 0.4em;
+  margin-left: 0.5rem;
 }
-@media (min-width: 768px){
-  .font-responsive-logo{
-    font-size: 55px !important;
-  }
-}
-.font-responsive-sublogo{
-  font-size: 15px;
-}
-@media (min-width: 768px){
-  .font-responsive-sublogo{
-    font-size: 25px;
+@media (min-width: 48rem){
+  .jumbotron h1 span{
+    font-size: .5em;
   }
 }
 .logo{
-  width:60%;
-  height:auto;
+  width: 60%;
+  height: auto;
 }
-@media (min-width: 576px){
+@media (min-width: 36rem){
   .logo{
-    width:400px;
-    height:400px;
+    max-width: 25rem;
   }
 }
-.max-w-700{
-  max-width:700px;
+@media (min-width: 48rem){
+  .logo{
+    display: inline-block;
+  }
+}
+.jumbotron p{
+  max-width: 43.75rem;
   margin: 0 auto;
 }
-.lang-ja{
+.jumbotron .lang-ja{
   font-family: 'MS PGothic', Osaka, Arial, sans-serif;
-  display:inline-block;
-  color: var(--fontColor-m1-m6);
-  font-size: 1.5rem;
-  font-weight: 500;
+  font-size: 1.25em;
+  color: var(--fontColor-m2-m4);
 }
-.font-responsive-ja{
-  font-size:20px;
-}
-@media (min-width: 768px){
-  .font-responsive-ja{
-    font-size:25px;
+@media (min-width: 48rem){
+  .jumbotron .lang-ja{
+    font-size: 1.5em;
   }
 }
 .landing-sub{
+  padding: 2rem;
   background: var(--bgLandingSub);
 }
+.landing-sub p{
+  text-align: center;
+}
+.landing-sub .lang-ja{
+  font-family: 'MS PGothic', Osaka, Arial, sans-serif;
+  display:inline-block;
+  color: var(--fontColor-m2-m4);
+  font-size: 1.25em;
+  font-weight: 500;
+}
+@media (min-width: 48rem){
+  .landing-sub .lang-ja{
+    font-size: 1.563em;
+  }
+}
 hr.landing-sub-break{
-  width:150px;
+  width: 9.375rem;
   margin:0 auto 1rem auto;
   border: 0;
   height: 1px;
   background-image: -webkit-linear-gradient(left, var(--mono-5), var(--mono-1), var(--mono-5));
 }
-@media (min-width: 576px){
+@media (min-width: 36rem){
   hr.landing-sub-break{
     display:none;
   }

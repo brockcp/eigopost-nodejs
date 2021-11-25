@@ -20,10 +20,10 @@ const Posts = ({history}) => {
     }
   }
   return(
-    <div className="container posts fade-in pt-3 pb-5">
+    <div className="container posts fade-in">
       <div className="row">
         <div className="col-sm-12 col-lg-8">
-          <div className="d-flex justify-content-between align-items-center mb-2">
+          <div className="d-flex justify-content-between align-items-center">
             <h1 className="">EigoPost
               <small className="s">s</small>
             </h1>
@@ -32,13 +32,17 @@ const Posts = ({history}) => {
               New Post
             </button>
           </div>
-          {error && <div className="posts-error">Oops. Please refresh your browser</div>}
+          {error &&
+            <div className="posts-error">
+              Oops. Please refresh your browser
+            </div>
+          }
           {data && data.map((x,y)=>(
             <div key={y}
                  className="posts-box">
               <Link to={"/posts/" + x.slug}>
-                <h2 className="mb-0">{x.post_title}</h2>
-                <p className="mb-0">
+                <h2>{x.post_title}</h2>
+                <p>
                   {x.post_body.length < 130 ? x.post_body :
                      x.post_body.substr(0,130) + `...`}
                 </p>

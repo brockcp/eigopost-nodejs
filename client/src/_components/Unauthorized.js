@@ -1,15 +1,15 @@
 import React from 'react';
-import notFoundLogo from '../assets/img-404.svg';
+import notFoundLogo from '../assets/img-logo-404.png';
 
 const Unauthorized = () => {
   document.title = "Eigopost | Unauthorized"
   return (
-    <div className="container text-center fade-in">
+    <div className="container unauthorized text-center fade-in">
         <img src={notFoundLogo}
              className="logo-404 fade-in"
              alt="logo"
         />
-        <p>You do not have permission to access that page.</p>
+        <h3>You do not have permission to access that page.</h3>
     </div>
   );
 }

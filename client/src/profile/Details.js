@@ -14,9 +14,9 @@ const Details = ({match}) => {
     return <Redirect to="/account/login"/>
   }
   return (
-    <div className="container profile-details pt-3 pb-3">
+    <div className="container profile-details">
       <div className="row">
-        <h3 className="px-0">Profile</h3>
+        <h3 className="">Profile</h3>
         <table>
           <thead>
             <tr>
@@ -35,12 +35,15 @@ const Details = ({match}) => {
             </tr>
             <tr>
               <td>joined</td>
-              <td>{moment(user.created).format('MM/YYYY')}</td>
+              <td>{moment(user.created).format('MM/DD/YYYY')}</td>
             </tr>
           </tbody>
         </table>
-        <p className="pt-4 px-0"><Link to={`${path}/update`} className="btn btn-primary">Update Profile</Link></p>
-        <h4 className="pt-2 px-0">Activity</h4>
+        <Link to={`${path}/update`}
+              className="btn btn-primary">
+          Update Profile
+        </Link>
+        <h4>Activity</h4>
         <UserPosts />
         <UserComments />
         <UserVotesUp />

@@ -1,4 +1,5 @@
 export * from './Alert';
+export * from './Comment';
 export * from './Error';
 export * from './Footer';
 export * from './Loader';
@@ -10,8 +11,7 @@ export * from './Nav';
 export * from './NavMobile';
 export * from './NotFound';
 export * from './PopoverProfile';
-export * from './PopoverVoteDown';
-export * from './PopoverVoteUp';
+export * from './PopoverVote';
 export * from './PrivateRoute';
 export * from './SkeletonEffects';
 export * from './SkeletonPosts';

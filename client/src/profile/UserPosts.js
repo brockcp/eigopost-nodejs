@@ -11,13 +11,13 @@ const UserPosts = () => {
   const {data, error, loading} = hookFetch(`${config.apiUrl}/posts/userPosts/${user.id}`);
 
   return(
-    <div className="container user-posts px-0">
+    <div className="container user-posts">
       {error && <h5>Oops. No user posts</h5>}
       {loading ? (
         <Loader/>
         ):(
           <div className="row">
-            <h5 className="">
+            <h5>
               Posts
               (<span className="activity-count">{data.length}</span>)
             </h5>
@@ -26,7 +26,7 @@ const UserPosts = () => {
                 <Link to={"/posts/" + x.slug}
                       className=""
                 >
-                  <h6 className="d-inline">{x.post_title.length < 30 ?
+                  <h6>{x.post_title.length < 30 ?
                     x.post_title : x.post_title.substr(0,30) + `...`}
                   </h6>
                   &emsp;

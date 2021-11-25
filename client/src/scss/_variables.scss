@@ -21,7 +21,7 @@
 
   --blue-h: 198;
   --blue-s: 54%;
-  --blue-l: 12%;
+  --blue-l: 10%;
   --blue-1: hsl(var(--blue-h), var(--blue-s), var(--blue-l));
   --blue-2: hsl(var(--blue-h), var(--blue-s), calc(var(--blue-l) + 5%));
   --blue-3: hsl(var(--blue-h), var(--blue-s), calc(var(--blue-l) + 7%));
@@ -40,7 +40,7 @@
 }
 .theme-light {
   --bgNavbar: var(--red-5);
-  --bgMenu: var(--mono-6);
+  --bgMenu: var(--red-5);
   --bgMain: var(--mono-6);
   --bgLandingMain: linear-gradient(var(--blue-6), var(--mono-5));
   --bgLandingSub: var(--mono-6);
@@ -48,16 +48,18 @@
   --bgForm: var(--mono-6);
   --bgFormControl: var(--mono-6);
   --bgFormControlActive: var(--mono-5);
-  --bgModal: var(--mono-2);
+  --bgModal: var(--red-4);
   --bgPopoverVote: var(--red-6);
   --bgAlert: var(--red-4);
   --fontColor-m1-m6: var(--mono-1);
   --fontColor-m3-m4: var(--mono-3);
+  --fontColor-m2-m4: var(--mono-2);
   --buttonPrimary: var(--red-5);
   --buttonPrimaryHover: var(--red-4);
+  --borderMenu: var(--mono-4);
   --borderBoxes: var(--mono-5);
   --skeleton: var(--mono-5);
-  --boxShadowMenu: 0 2px 8px 0 var(--mono-4);
+  //--boxShadowMenu: 0 0.125rem 0.5rem 0 var(--mono-4);
   --alertIcon: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff' %3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
 }
 .theme-dark {
@@ -75,10 +77,12 @@
   --bgAlert: var(--transparent);
   --fontColor-m1-m6: var(--mono-6);
   --fontColor-m3-m4: var(--mono-4);
+  --fontColor-m2-m4: var(--mono-4);
   --buttonPrimary: var(--transparent);
   --buttonPrimaryHover: var(--transparent);
+  --borderMenu: var(--mono-3);
   --borderBoxes: var(--blue-4);
   --skeleton: var(--blue-3);
-  --boxShadowMenu: 0 0 0 0 var(--transparent);
+  //--boxShadowMenu: 0 0 0 0 var(--transparent);
   --alertIcon: transparent url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff' %3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e") center/1em auto no-repeat;
 }

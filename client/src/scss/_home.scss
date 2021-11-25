@@ -1,0 +1,36 @@
+.about,
+.contact,
+.privacy,
+.terms{
+  padding-top: 2rem;
+}
+.about ul,
+.privacy ul,
+.terms ul{
+  padding-left:0;
+}
+.about h1,
+.contact h1,
+.terms h1,
+.privacy h1{
+  color: var(--red-4);
+}
+.about small{
+  color: var(--fontColor-m3-m4);
+}
+.about h4,
+.terms h4,
+.privacy h4{
+  color: var(--fontColor-m1-m6);
+}
+.about p,
+.contact p,
+.terms p,
+.privacy p{
+  color: var(--fontColor-m3-m4);
+}
+.terms p.lang-ja,
+.privacy p.lang-ja{
+  font-family: 'MS PGothic', Osaka, Arial, sans-serif;
+  color: var(--fontColor-m2-m4);
+}

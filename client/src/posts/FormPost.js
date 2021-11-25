@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import {Link, Redirect} from 'react-router-dom';
 import {accountService, alertService, postsComments} from '@/_services';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
@@ -28,7 +29,7 @@ const FormPost = ({history}) => {
       });
   }
   return (
-     <div className="container-fluid">
+     <div className="container-fluid new-post">
         <div className="row">
           {user ? (
             <div className="new-post-form">
@@ -54,7 +55,7 @@ const FormPost = ({history}) => {
                        <h3 className="">New Post</h3>
                        <div className="card-body">
                        <div className="form-row">
-                            <div className="mb-3 col-12">
+                            <div className="col-12">
                               <label>Category</label>
                               <Field name="category" as="select" className={'form-control' + (errors.category && touched.category ? ' is-invalid' : '')}>
                                 <option value=""></option>
@@ -66,25 +67,26 @@ const FormPost = ({history}) => {
                             </div>
                         </div>
                            <div className="form-row">
-                                <div className="mb-3 col-12">
+                                <div className="col-12">
                                   <label>Title</label>
                                   <Field name="post_title" type="text" className={'form-control' + (errors.post_title && touched.post_title ? ' is-invalid' : '')} />
                                   <ErrorMessage name="post_title" component="div" className="invalid-feedback" />
                                 </div>
                             </div>
                             <div className="form-row">
-                                <div className="mb-3 col-12">
+                                <div className="col-12">
                                   <label>Post</label>
                                   <Field name="post_body" type="text" component="textarea" rows="8" className={'form-control' + (errors.post_body && touched.post_body ? ' is-invalid' : '')} />
                                   <ErrorMessage name="post_body" component="div" className="invalid-feedback" />
                                 </div>
                             </div>
                             <div className="form-row">
-                                <div className="mb-3">
+                                <div className="col-12">
                                     <button type="submit" disabled={isSubmitting} className="btn btn-primary">
                                       {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
                                       Submit Post
                                     </button>
+                                    <Link to="/posts" className="btn btn-link">Cancel</Link>
                                 </div>
                             </div>
                         </div>
@@ -98,11 +100,7 @@ const FormPost = ({history}) => {
               </Formik>
             </div>
           ):(
-            <div className="col-sm-12 p-4">
-              <p className="text-center">
-                Please login or sign up to post.
-              </p>
-            </div>
+            <Redirect to="/account/login"/>
           )}
         </div>
     </div>

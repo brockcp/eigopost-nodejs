@@ -34,9 +34,8 @@ const FormComment = (props) => {
       });
   }
   return (
-    <div className="comment-form fade-in pt-4 text-center">
+    <div className="comment-form fade-in">
       {user ? (
-        <div className="pt-2 fade-in">
           <Formik
             initialValues={{
               comment_body: '',
@@ -46,24 +45,32 @@ const FormComment = (props) => {
             }}
             validationSchema={Yup.object().shape({
               comment_body: Yup.string()
-                .required('comment please')
+                .required('comment required')
             })}
             onSubmit={onSubmit}
           >
             {({ errors, touched, isSubmitting }) => (
               <Form>
-                  <div className="mb-3">
-                    <label>
-                      Comment:
-                    </label>
-                    <Field name="comment_body" component="textarea" rows="5" className={'form-control' +
-                     (errors.comment_body && touched.comment_body ? ' is-invalid' : '')} />
-                    <ErrorMessage name="comment_body" component="div" className="invalid-feedback" />
+                  <div className="form-row">
+                    <label>Comment</label>
+                    <Field name="comment_body"
+                           component="textarea"
+                           rows="5"
+                           className={'form-control' +
+                           (errors.comment_body && touched.comment_body ? ' is-invalid' : '')} />
+                    <ErrorMessage name="comment_body"
+                                  component="div"
+                                  className="invalid-feedback"
+                    />
                   </div>
-
-                  <div className="mb-3">
-                    <button type="submit" disabled={isSubmitting} className="btn btn-primary">
-                      {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
+                  <div className="form-row">
+                    <button type="submit"
+                            disabled={isSubmitting}
+                            className="btn btn-primary">
+                      {isSubmitting &&
+                        <span className="spinner-border spinner-border-sm mr-1">
+                        </span>
+                      }
                       Submit Comment
                     </button>
                   </div>
@@ -75,12 +82,19 @@ const FormComment = (props) => {
               </Form>
             )}
           </Formik>
-        </div>
       ):(
-        <div className="p-4 fade-in">
-          <h5 className="guest-message">Would you like to comment? Please sign in or sign up.</h5>
-          <Link to={'/account/login'} className="btn btn-primary m-1">Sign in</Link>
-          <Link to={'/account/register'} className="btn btn-primary m-1">Sign up</Link>
+        <div className="guest-container fade-in">
+          <h5 className="guest-message">
+            Would you like to comment? Please sign in or sign up.
+          </h5>
+          <Link to={'/account/login'}
+                className="btn btn-primary">
+            Sign in
+          </Link>
+          <Link to={'/account/register'}
+                className="btn btn-primary">
+            Sign up
+          </Link>
         </div>
       )}
     </div>

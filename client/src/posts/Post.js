@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {NavLink, Redirect} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import config from 'config';
 import {hookFetch} from '../_helpers/hook-fetch';
 import moment from 'moment';
@@ -16,7 +16,7 @@ const Post = (props) => {
     return <Error/>;
   }
   return(
-    <div className="container post pt-3">
+    <div className="container post">
       <div className="row">
         <div className="col-sm-12 col-lg-8">
           {loading ? (
@@ -26,7 +26,7 @@ const Post = (props) => {
              {data ? (
                <div className="fade-in">
                   <div className="d-flex justify-content-between align-items-center">
-                    <h2 className="mb-0">{data.post_title}</h2>
+                    <h2>{data.post_title}</h2>
                     <NavLink to="/posts"
                              className="back-to-posts">
                        Back to Posts

@@ -1,25 +1,53 @@
+.comments{
+  padding-top: 1rem;
+}
 .comments h4{
   color: var(--red-3);
 }
-.comments-box{
+.comment{
+  display: flex;
+  align-items: center;
   padding:.5rem;
-  border-top:1px solid  var(--borderBoxes);
-  border-left:1px solid  var(--borderBoxes);
   border-right:1px solid  var(--borderBoxes);
-}
-.comments-box:last-child{
   border-bottom:1px solid  var(--borderBoxes);
+  border-left:1px solid  var(--borderBoxes);
 }
-.comments p{
+.comment:first-child{ //last:child not working
+  border-top:1px solid  var(--borderBoxes);
+}
+.comment .voting-box{
+  margin-left: -0.938rem;
+}
+.comment .thumb-up,
+.comment .thumb-down{
+  display: block;
+  height: 1.125rem;
+  width: 1.125rem;
+  margin: 0 auto;
+  cursor: pointer;
+  fill: var(--red-6);
+}
+.comment .votes {
+  display: block;
+  vertical-align: middle;
+  padding-top: 0.25rem;
+  text-align: center;
+  color: var(--fontColor-m1-m6);
+  line-height: 1.2rem;
+  padding-bottom: .1rem;
+}
+
+.comment p{
+  margin-bottom: 0;
   color: var(--fontColor-m1-m6);
 }
-.comments .comment-info,
-.comments .comment-date{
-  color: var(--fontColor-m1-m6);
+.comment .comment-info,
+.comment .comment-date{
+  color: var(--fontColor-m3-m4);
 }
-.comments .user-name{
+.comment .user-name{
   color: var(--red-4);
 }
-.comments .no-comments{
+.comment .no-comments{
   color: var(--red-4);
 }

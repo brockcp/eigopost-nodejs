@@ -1,9 +1,16 @@
+.posts{
+ padding-top: 1rem;
+ padding-bottom: 1rem;
+}
 .posts h1,
 .posts h2{
   color: var(--red-5);
 }
 .posts .s{
   color: var(--fontColor-m3-m4);
+}
+.posts button{
+  margin-bottom: 0.5rem;
 }
 .posts .posts-error{
   color: var(--fontColor-m1-m6);
@@ -16,6 +23,10 @@
 }
 .posts-box:last-child{
   border-bottom:1px solid  var(--borderBoxes);
+}
+.posts-box h2,
+.posts-box p{
+  margin-bottom: 0;
 }
 .posts p{
   color: var(--fontColor-m1-m6);
@@ -31,7 +42,7 @@
 // .posts .posts-sidebar{
 //   display: none;
 // }
-// @media (min-width:992px){
+// @media (min-width: 62rem){
 //   .posts .posts-sidebar{
 //     display:block;
 //     border: 1px solid var(--mono-5);

@@ -45,11 +45,21 @@ function Nav(props) {
           <div className={`two ${isModalOpen ? 'close' : ''}`}/>
           <div className={`three ${isModalOpen ? 'close' : ''}`}/>
         </button>
-        <NavLink exact to="/" className="navbar-brand">EigoPost</NavLink>
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+        <NavLink exact to="/"
+                 className="navbar-brand">
+          EigoPost
+        </NavLink>
+        <div className="collapse navbar-collapse"
+             id="navbarTogglerDemo03">
           <div className="navbar-nav me-lg-auto mt-lg-0">
-            <NavLink to="/about" className="nav-item nav-link">About</NavLink>
-            <NavLink to="/posts" className="nav-item nav-link">Posts</NavLink>
+            <NavLink to="/about"
+                     className="nav-item nav-link">
+              About
+            </NavLink>
+            <NavLink to="/posts"
+                     className="nav-item nav-link">
+              Posts
+            </NavLink>
           </div>
           {user ? (
             <div className="navbar-nav ms-auto">
@@ -68,14 +78,24 @@ function Nav(props) {
                 </div>
               }
               {user.role === Role.Admin &&
-                <NavLink to="/admin" className="nav-item nav-link">Admin</NavLink>
+                <NavLink to="/admin"
+                         className="nav-item nav-link">
+                  Admin
+                </NavLink>
               }
-              <a onClick={accountService.logout} className="nav-item nav-link">LogOut</a>
+              <a onClick={accountService.logout}
+                 className="nav-item nav-link">LogOut</a>
             </div>
           ) : (
             <div className="navbar-nav ms-auto">
-              <NavLink exact to="/account/login" className="nav-item mr-auto nav-link">Login</NavLink>
-              <NavLink exact to="/account/register" className="nav-item mr-auto nav-link">Sign Up</NavLink>
+              <NavLink exact to="/account/login"
+                       className="nav-item mr-auto nav-link">
+                Login
+              </NavLink>
+              <NavLink exact to="/account/register"
+                       className="nav-item mr-auto nav-link">
+                Sign Up
+              </NavLink>
             </div>
           )}
 

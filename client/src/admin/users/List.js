@@ -43,12 +43,12 @@ function List({match}) {
               <td style={{ whiteSpace: 'nowrap' }}>
                 <Link to={`${path}/edit/${user.id}`}
                       className="btn btn-sm btn-primary me-1"
-                      style={{width: '60px'}}>
+                      style={{width: '3.75rem'}}>
                   Edit
                 </Link>
                 <button onClick={() => deleteUser(user.id)}
                         className="btn btn-sm btn-primary"
-                        style={{ width: '60px' }}
+                        style={{ width: '3.75rem' }}
                         disabled={user.isDeleting}>
                   {user.isDeleting
                     ? <span className="spinner-border spinner-border-sm"></span>

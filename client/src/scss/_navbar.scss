@@ -12,13 +12,13 @@
   color:  var(--mono-6) !important;
 	cursor: pointer;
 }
-@media (min-width: 768px){
+@media (min-width: 48rem){
   .nav-item {
-    margin-left:15px;
+    margin-left: 0.938rem;
   }
 }
 .user-link{
-	border-radius: 8px;
+	border-radius: 0.5rem;
 }
 .user-link:hover{
 	background: var(--red-3);

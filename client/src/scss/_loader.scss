@@ -6,15 +6,15 @@
   z-index: 9;
   top: 50%;
   left: 46%;
-  margin: -40px 0 0 -20px;
-  height: 80px;
-  width: 80px;
-  border: 10px solid hsl(357, 86%, 50%);
+  margin: -2.5rem 0 0 -1.25rem;
+  height: 5rem;
+  width: 5rem;
+  border: 0.625rem solid hsl(357, 86%, 50%);
   border-top-color: hsl(357, 86%, 60%);
   border-left-color: hsl(357, 86%, 70%);
   border-bottom-color: hsl(357, 86%, 80%);
   border-right-color: hsl(357, 86%, 90%);
-  border-radius: 80px;
+  border-radius: 5rem;
 }
 @keyframes loaderRotate{
   100% {transform: rotate(360deg);}

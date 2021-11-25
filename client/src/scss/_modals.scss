@@ -1,24 +1,24 @@
 .ep-modal {
   display: block;
   position: fixed;
-  width: 270px;
-  height: 420px;
-  top: calc(40% - 150px);
-  left: calc(50% - 135px);
-  padding: 40px;
+  width: 16.875rem;
+  height: 26.25rem;
+  top: calc(40% - 9.375rem);
+  left: calc(50% - 8.438rem);
+  padding: 2.5rem;
   z-index: 90;
   background: var(--bgModal);
 }
-@media (min-width:413px){
+@media (min-width: 25.813rem){
   .ep-modal{
-    width:400px;
-    height:300px;
-    left: calc(50% - 200px);
+    width: 25rem;
+    height: 18.75rem;
+    left: calc(50% - 12.5rem);
   }
 }
 .ep-modal-title{
   display:inline-block;
-  width:85%;
+  width: 85%;
 }
 h3.ep-modal-title,
 .ep-modal-body h5{
@@ -26,14 +26,14 @@ h3.ep-modal-title,
 }
 .ep-modal-icon-container{
   display:inline-block;
-  width:5%;
+  width: 5%;
   vertical-align: top;
-  padding:.1rem 0 0 .5rem;
+  padding: .1rem 0 0 .5rem;
   cursor:pointer;
 }
 .ep-modal-icon-container img{
-  width: 25px;
-  height: 25px;
+  width: 1.563rem;
+  height: 1.563rem;
 }
 .ep-modal-body{
   padding: 2rem 0;
@@ -41,5 +41,5 @@ h3.ep-modal-title,
 .ep-modal-body h5{
 }
 .ep-modal-footer{
-  margin-left:5px;
+  margin-left: 0.313rem;
 }

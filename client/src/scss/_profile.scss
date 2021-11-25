@@ -1,17 +1,32 @@
 .profile-container{
-  max-width:700px;
+  max-width: 43.75rem;
   margin: 0 auto;
-  padding:1rem;
+  padding-top:2rem;
+  padding-bottom: 2rem;
 }
 .profile-details h3,
 .profile-details h4{
   color: var(--red-3);
+  padding-left: 0;
+  padding-right: 0;
 }
 .profile-details td{
-  width: 75px;
+  width: 4.688rem;
   color: var(--fontColor-m1-m6);
-  font-size: 1.2rem;
+  font-size: 1.2em;
 }
+.profile-details a.btn-primary{
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.user-posts,
+.user-comments,
+.user-votes-up,
+.user-votes-down{
+  padding-left:0;
+  padding-bottom:1rem;
+}
+
 .user-posts h5,
 .user-comments h5,
 .user-votes-up h5,
@@ -26,6 +41,7 @@
 .user-comments h6,
 .user-votes-up h6,
 .user-votes-down h6{
+  display:inline;
   color: var(--red-5);
 }
 .user-comments .score{

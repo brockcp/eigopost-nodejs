@@ -13,11 +13,11 @@
   width:98%;
   margin: 2rem auto;
   padding: 1rem;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
 }
-@media (min-width: 576px){
+@media (min-width: 36rem){
   .admin .add-user-form{
-    max-width: 500px;
+    max-width: 31.25rem;
   }
 }
 .admin .add-user-form label{

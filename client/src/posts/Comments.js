@@ -58,11 +58,11 @@ const Comments= (props) => {
   };
   const comments = commentsData && commentsData.map((x) => {
     return <Comment data={x}
-                       key={x._id}
-                       upVote={upVote}
-                       downVote={downVote}
-                       user={user}
-                       upDateComment={updateComment}
+                    key={x._id}
+                    upVote={upVote}
+                    downVote={downVote}
+                    upDateComment={updateComment}
+                    user={user}
             />;
   });
   useEffect(()=>{
@@ -70,24 +70,29 @@ const Comments= (props) => {
   },[data]);
   return (
     <div className="comments">
-      <h4 className="pt-4">comments</h4>
-      {error && <div>Oops. Please refresh your browser</div>}
+      <h4>comments</h4>
+      {error &&
+        <div>
+          Oops. Please refresh your browser
+        </div>
+      }
       {loading ? (
          <Loader/>
          ):(
          <div className="container fade-in">
           {commentsData &&
-            <div className="">
-              <div className="">
+            <div>
                 {comments}
-                {commentsData < 1 && <h5 className="no-comments">Be the first to comment on this post.</h5>}
-              </div>
+                {commentsData < 1 &&
+                  <h5 className="no-comments">
+                    Be the first to comment on this post.
+                  </h5>
+                }
               <FormComment postId={props.postId}/>
             </div>
           }
          </div>
        )}
-
        <ModalAccounts modalVis={modalVisible}
                       setModalVisOff={setModalVisible}/>
      </div>

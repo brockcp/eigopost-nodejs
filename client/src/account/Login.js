@@ -40,41 +40,43 @@ const Login = ({history}) => {
             onSubmit={onSubmit}>
       {({errors, touched, isSubmitting}) => (
         <Form>
-          <h3 className="accounts-form-title">Sign in to your account</h3>
-          <div className="accounts-form-login">Dont have an account?
-            <Link to={'/account/register'}
-                  className="account-link">
-               &emsp; Create account
-            </Link>
-          </div>
-          <div className="card-body">
-            <div className="mb-3">
-              <label>Email</label>
-              <Field name="email"
-                     type="text"
-                     className={'form-control'+(errors.email && touched.email ? ' is-invalid' : '')} />
-              <ErrorMessage name="email" component="div" className="invalid-feedback" />
-            </div>
-            <div className="mb-3">
-              <label>Password</label>
-              <Field name="password"
-                     type="password"
-                     className={'form-control'+(errors.password && touched.password ? ' is-invalid' : '')} />
-              <ErrorMessage name="password"
-                            component="div"
-                            className="invalid-feedback" />
-            </div>
-            <div className="mb-3 col">
-              <button type="submit"
-                      disabled={isSubmitting}
-                      className="btn btn-primary">
-                {isSubmitting && <span className="ep-spinner ep-spinner-sm mr-1"></span>}
-                  Login
-              </button>
-              <Link to={"/account/forgot-password"}
-                    className="account-forgot mt-2 ms-3">
-                Forgot Password
+          <div className="login">
+            <h3 className="accounts-form-title">Sign in to your account</h3>
+            <div className="accounts-form-login">Dont have an account?
+              <Link to={'/account/register'}
+                    className="account-link">
+                 &emsp; Create account
               </Link>
+            </div>
+            <div className="card-body">
+              <div className="form-group">
+                <label>Email</label>
+                <Field name="email"
+                       type="text"
+                       className={'form-control'+(errors.email && touched.email ? ' is-invalid' : '')} />
+                <ErrorMessage name="email" component="div" className="invalid-feedback" />
+              </div>
+              <div className="form-group">
+                <label>Password</label>
+                <Field name="password"
+                       type="password"
+                       className={'form-control'+(errors.password && touched.password ? ' is-invalid' : '')} />
+                <ErrorMessage name="password"
+                              component="div"
+                              className="invalid-feedback" />
+              </div>
+              <div className="form-group col">
+                <button type="submit"
+                        disabled={isSubmitting}
+                        className="btn btn-primary">
+                  {isSubmitting && <span className="ep-spinner ep-spinner-sm mr-1"></span>}
+                    Login
+                </button>
+                <Link to={"/account/forgot-password"}
+                      className="account-forgot mt-2 ms-3">
+                  Forgot Password
+                </Link>
+              </div>
             </div>
           </div>
         </Form>

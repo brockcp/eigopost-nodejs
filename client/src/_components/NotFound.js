@@ -1,5 +1,5 @@
 import React from 'react';
-import notFoundLogo from '../assets/img-404.svg';
+import notFoundLogo from '../assets/img-logo-404.png';
 
 const NotFound = () => {
   document.title = "Eigopost | Not Found"
@@ -9,7 +9,7 @@ const NotFound = () => {
              className="logo-404 fade-in"
              alt="logo"
         />
-        <h3 className="">Oh 404! We cannot find that page!</h3>
+        <h3>Oh 404! We cannot find that page!</h3>
     </div>
   );
 }

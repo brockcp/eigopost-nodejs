@@ -98,11 +98,12 @@ const Update = ({history}) => {
                             {isSubmitting && <span className="spinner-border spinner-border-sm mr-1"></span>}
                             Update
                         </button>
+                        <Link to="/profile" className="btn btn-link">Cancel</Link>
                     </div>
                     <hr />
                     <h3 className="pt-3">Delete Account</h3>
                     <div className="mb-3">
-                        <button type="button" onClick={() => deleteModal()} className="btn btn-primary" style={{ width: '75px' }} disabled={isDeleting}>
+                        <button type="button" onClick={() => deleteModal()} className="btn btn-primary" style={{ width: '4.688rem' }} disabled={isDeleting}>
                             {isDeleting
                                 ? <span className="spinner-border spinner-border-sm"></span>
                                 : <span>Delete</span>

@@ -3,7 +3,7 @@ import {accountService} from '@/_services';
 import {Link, Route, Switch, Redirect, useLocation} from 'react-router-dom';
 import {Nav, Alert, NotFound, Footer, PrivateRoute, Unauthorized} from '@/_components';
 import {Role} from '@/_helpers';
-import {Landing, About, Contact, Terms} from '@/home';
+import {Landing, About, Contact, Terms, Privacy} from '@/home';
 import {Profile} from '@/profile';
 import {Admin} from '@/admin';
 import {Account} from '@/account';
@@ -24,7 +24,7 @@ const App = () => {
   })
 
   return (
-    <div className="container-fluid px-0">
+    <div className="container-fluid container-main px-0">
       <Nav />
       <Alert />
       <div className="global-mh">
@@ -33,7 +33,8 @@ const App = () => {
           <Route exact path="/" component={Landing} />
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
-          <Route path="/terms" component={Terms} />
+          <Route path="/terms-of-use" component={Terms} />
+          <Route path="/privacy-policy" component={Privacy} />
           <Route path="/profile" component={Profile} />
           <PrivateRoute path="/admin" roles={[Role.Admin]} component={Admin} />
           <Route path="/account" component={Account} />

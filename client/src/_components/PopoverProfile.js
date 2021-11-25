@@ -5,9 +5,9 @@ import close from "../assets/icon-close.svg";
 
 const PopoverProfile = (props) => {
   const transitions = useTransition(props.isPopOpen, null, {
-    from: { opacity: 0, transform: "translateY(-10px)" },
-    enter: { opacity: 1, transform: "translateY(0px)" },
-    leave: { opacity: 0, transform: "translateY(-10px)" }
+    from: { opacity: 0, transform: "translateY(-.625rem)" },
+    enter: { opacity: 1, transform: "translateY(0rem)" },
+    leave: { opacity: 0, transform: "translateY(-.625rem)" }
   });
   return (
     <div className="container-fluid">

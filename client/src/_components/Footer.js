@@ -8,10 +8,11 @@ const Footer = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col">
-              <div className="d-flex pt-4">
-                <ul className="mx-auto list-unstyled">
-                  <Link to="/contact" className="d-block p-1">Contact</Link>
-                  <Link to="/terms" className="d-block p-1">Terms</Link>
+              <div className="footer-links">
+                <ul>
+                  <Link to="/contact">Contact</Link>
+                  <Link to="/terms-of-use">Terms of Use</Link>
+                  <Link to="/privacy-policy">Privacy Policy</Link>
                 </ul>
               </div>
               <Toggle />
@@ -19,8 +20,14 @@ const Footer = () => {
         </div>
         <div className="row">
           <div className="col">
-            <div className="d-flex justify-content-center">
-              <p className="pt-5">© 2021 <strong><NavLink to="/" className="">EigoPost.com</NavLink></strong></p>
+            <div className="footer-copyright">
+              <p className="">© 2021
+                <strong>
+                  <NavLink to="/">
+                    EigoPost.com
+                  </NavLink>
+                </strong>
+              </p>
             </div>
           </div>
         </div>
