@@ -107,7 +107,7 @@ const Register = ({history}) => {
                            className={'form-check-input ' +
                            (errors.acceptTerms && touched.acceptTerms ? ' is-invalid' : '')} />
                     <label>
-                      <Link to="/terms"
+                      <Link to="/terms-of-use"
                             className="account-terms"
                             target="_blank"
                             rel="noopener noreferrer">
