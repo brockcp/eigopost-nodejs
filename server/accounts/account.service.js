@@ -68,6 +68,11 @@ async function revokeToken({ token, ipAddress }) {
 }
 async function register(params, origin) {
   // validate
+  // if username already in use
+  const username = await db.Account.findOne({ userName: params.userName });
+  if(username){
+    throw 'Sorry, that username is unavailable. Please choose another.';
+  }
   if (await db.Account.findOne({ email: params.email })) {
     // send already registered error in email to prevent account enumeration
     return await sendAlreadyRegisteredEmail(params.email, origin);
@@ -228,7 +233,7 @@ async function sendVerificationEmail(account, origin) {
                       style="text-decoration:none !important;
                              text-decoration:none;
                              color:#333333">
-                    Ganbarimashou!
+                    Click here and Ganbarimashou!
                    </a>
                  </p>
                </td>`;

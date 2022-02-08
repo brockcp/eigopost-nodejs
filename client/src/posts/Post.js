@@ -1,16 +1,18 @@
 import React, {useState, useEffect} from 'react';
-import {NavLink} from 'react-router-dom';
+import {NavLink, useParams, useLocation} from 'react-router-dom';
 import config from 'config';
-import {hookFetch} from '../_helpers/hook-fetch';
+import {HookFetch} from '../_helpers/HookFetch';
 import moment from 'moment';
 import {Loader} from '../_components/Loader';
 import {Error} from '../_components/Error';
 import {NotFound} from '../_components/NotFound';
 import Comments from './Comments';
+import './Post.css';
 
 const Post = (props) => {
-  document.title = `Eigopost - ${props.match.params.slug}`;
-  const {data, error, loading} = hookFetch(`${config.apiUrl}/posts/${props.match.params.slug}`);
+  let {slug} = useParams();
+  document.title = `Eigopost - ${slug}`;
+  const {data, error, loading} = HookFetch(`${config.apiUrl}/posts/${slug}`);
 
   if(error){
     return <Error/>;

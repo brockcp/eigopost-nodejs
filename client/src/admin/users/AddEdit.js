@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { accountService, alertService } from '@/_services';
 
-function AddEdit({ history, match }) {
-  const { id } = match.params;
+function AddEdit() {
+  const navigate = useNavigate();
+  let {id} = useParams();
   const isAddMode = !id;
   const initialValues = {
     userName: '',
@@ -43,7 +44,7 @@ function AddEdit({ history, match }) {
     accountService.create(fields)
     .then(() => {
       alertService.success('User added successfully', { keepAfterRouteChange: true });
-      history.push('.');
+      navigate(-1);
     })
     .catch(error => {
       setSubmitting(false);
@@ -53,8 +54,9 @@ function AddEdit({ history, match }) {
   function updateUser(id, fields, setSubmitting) {
     accountService.update(id, fields)
     .then(() => {
-      alertService.success('Update successful', { keepAfterRouteChange: true });
-      history.push('..');
+      alertService.success('Update successful',
+       {keepAfterRouteChange: true});
+      navigate(-1);
     })
     .catch(error => {
       setSubmitting(false);
@@ -62,8 +64,14 @@ function AddEdit({ history, match }) {
     });
   }
   return (
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-        {({ errors, touched, isSubmitting, setFieldValue }) => {
+    <Formik initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}>
+        {({ errors,
+            touched,
+            isSubmitting,
+            setFieldValue
+         }) => {
           useEffect(() => {
             if (!isAddMode) {
               // get user and set form fields

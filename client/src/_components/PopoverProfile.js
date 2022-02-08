@@ -2,12 +2,13 @@ import React from "react";
 import {NavLink} from 'react-router-dom';
 import {useTransition, animated} from "react-spring";
 import close from "../assets/icon-close.svg";
+import './Popover.css';
 
 const PopoverProfile = (props) => {
   const transitions = useTransition(props.isPopOpen, null, {
-    from: { opacity: 0, transform: "translateY(-.625rem)" },
+    from: { opacity: 0, transform: "translateY(-0.625rem)" },
     enter: { opacity: 1, transform: "translateY(0rem)" },
-    leave: { opacity: 0, transform: "translateY(-.625rem)" }
+    leave: { opacity: 0, transform: "translateY(-0.625rem)" }
   });
   return (
     <div className="container-fluid">

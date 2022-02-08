@@ -1,0 +1,69 @@
+.admin h1{
+  color: var(--red-3);
+}
+.admin p,
+.admin table th,
+.admin table td{
+  color: var(--fontColor-m1-m6);
+}
+.admin p a{
+  color: var(--red-4);
+}
+.user-list .table{
+  border-color: var(--borderBoxes);
+}
+.user-list .table > :not(:first-child) {
+  border-top: 2px solid var(--borderBoxes);
+}
+.admin .add-user-form{
+  width:98%;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 36rem){
+  .admin .add-user-form{
+    max-width: 31.25rem;
+  }
+}
+.admin .add-user-form label{
+  color: var(--fontColor-m1-m6);
+}
+.admin .add-user-link{
+  color: var(--red-3);
+  margin-left: 1.5rem;
+}
+
+.user-list .back-to-admin{
+  color: var(--red-5);
+}
+
+/***  COLOR SCHEME  ***/
+.bg-1{background: var(--mono-1);}
+.bg-2{background: var(--mono-2);}
+.bg-3{background: var(--mono-3);}
+.bg-4{background: var(--mono-4);}
+.bg-5{background: var(--mono-5);}
+.bg-6{background: var(--mono-6);}
+
+.bg-7{background: var(--blue-1);}
+.bg-8{background: var(--blue-2);}
+.bg-9{background: var(--blue-3);}
+.bg-10{background: var(--blue-4);}
+.bg-11{background: var(--blue-5);}
+.bg-12{background: var(--blue-6);}
+
+.bg-13{background: var(--red-1);}
+.bg-14{background: var(--red-2);}
+.bg-15{background: var(--red-3);}
+.bg-16{background: var(--red-4);}
+.bg-17{background: var(--red-5);}
+.bg-18{background: var(--red-6);}
+
+.bg-19{background: var(--extra1);}
+.bg-20{background: var(--extra2);}
+.bg-21{background: var(--extra3);}
+.bg-22{background: var(--extra4);}
+.bg-23{background: var(--extra5);}
+.bg-24{background: var(--extra7);}
+.pp{padding:4vh 4vw; color:#ffffff !important}

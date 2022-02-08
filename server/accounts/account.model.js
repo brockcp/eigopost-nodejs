@@ -6,7 +6,7 @@ const Comment = require('../posts/comment.model');
 const schema = new Schema({
     email: { type: String, unique: true, required: true },
     passwordHash: { type: String, required: true },
-    userName: { type: String, required: true },
+    userName: { type: String, unique: true, required: true },
     acceptTerms: Boolean,
     role: { type: String, required: true },
     verificationToken: String,

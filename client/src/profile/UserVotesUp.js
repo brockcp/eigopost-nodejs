@@ -3,12 +3,12 @@ import {Link} from 'react-router-dom';
 import {accountService} from '@/_services';
 import config from 'config';
 import moment from 'moment';
-import {hookFetch} from '../_helpers/hook-fetch';
+import {HookFetch} from '../_helpers/HookFetch';
 import {Loader} from '../_components/Loader';
 
 const UserVotesUp = () => {
   const user = accountService.userValue;
-  const {data, error, loading} = hookFetch(`${config.apiUrl}/posts/userVotesUp/${user.id}`)
+  const {data, error, loading} = HookFetch(`${config.apiUrl}/posts/userVotesUp/${user.id}`)
 
   return(
     <div className="container user-votes-up">

@@ -1,0 +1,36 @@
+
+.themeToggle-container{
+  padding-top:0.1rem;
+  padding-left:1rem;
+ }
+.switch {
+   width: 56px;
+   height: 30px;
+   border-radius: 100px;
+   background: var(--red-2); /*INITIAL TOGGLE BG*/
+   display: inline-block;
+   vertical-align: middle;
+   /* margin: 12px;
+   padding: 2px; */
+   cursor: pointer;
+   transition: 3.4s; /* SWITCH BG COLOR CHANGE */
+   position: relative;
+}
+.switch:after {
+   border-radius: 50%;
+   background: var(--red-4); /*INITIAL BUTTON */
+   transition: left .4s ease-in-out; /* BUTTON SLIDE */
+   position: relative;
+   display: block;
+   content: "";
+   width: 50%;
+   height: 100%;
+   left: 0;
+}
+.checkbox:checked + .switch {
+	 background: var(--blue-7); /* SWITCHED BG */
+}
+.checkbox:checked + .switch:after {
+	 left: 50%;
+   background: var(--blue-4); /* SWITCHED BUTTON */
+}

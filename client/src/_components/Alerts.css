@@ -1,0 +1,13 @@
+.alert {
+  border-radius: 0 !important;
+}
+.alert-success,
+.alert-danger {
+  color: var(--mono-6) !important;
+  background-color: var(--bgAlert) !important;
+  border: 1px solid var(--red-4) !important;
+}
+.btn-close {
+  padding-left: 3rem !important;
+  background: var(--iconClose) !important;
+}

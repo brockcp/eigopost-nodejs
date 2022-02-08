@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react';
+import './ThemeToggle.css';
 
 const Toggle = () => {
   const [value, setValue] = useState(false);
@@ -21,20 +22,18 @@ const Toggle = () => {
   }, [theme])
   return(
     <div className="toggle-container">
+     <label>
       <input
-        type="checkbox"
-        id="toggle"
-        className="toggle-checkbox"
-        onChange={handleOnClick}
-        checked={value}
+      name="switch"
+      id="switch"
+      type="checkbox"
+      checked={value}
+      onChange={handleOnClick}
+      className="checkbox"
+      hidden
       />
-      <label
-        htmlFor="toggle"
-        className="toggle-label"
-        style={{ background: value && '#777777'}}
-      >
-        <span className="toggle--label-background" />
-      </label>
+      <label className="switch" htmlFor="switch" />
+    </label>
     </div>
   );
 };

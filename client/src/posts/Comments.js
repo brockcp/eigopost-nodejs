@@ -1,17 +1,17 @@
 import React,{useState, useEffect} from 'react';
 import {accountService, postsComments} from '@/_services';
 import config from 'config';
-import {hookFetch} from '../_helpers/hook-fetch';
+import {HookFetch} from '../_helpers/HookFetch';
 import {Loader} from '../_components/Loader';
-import FormComment from './FormComment';
-import {Comment} from '../_components/Comment';
+import CommentForm from './CommentForm';
+import {CommentVoting} from './CommentVoting';
 import {ModalAccounts} from '../_components/ModalAccounts';
-
 import {useTransition, animated} from "react-spring";
+import './comments.css';
 
 const Comments= (props) => {
   const user = accountService.userValue;
-  const {data, error, loading} = hookFetch(`${config.apiUrl}/posts/postComments/${props.postId}`);
+  const {data, error, loading} = HookFetch(`${config.apiUrl}/posts/postComments/${props.postId}`);
   const [commentsData, setCommentsData] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const upVote = (commentId) => {
@@ -57,12 +57,12 @@ const Comments= (props) => {
     setCommentsData(comments);
   };
   const comments = commentsData && commentsData.map((x) => {
-    return <Comment data={x}
-                    key={x._id}
-                    upVote={upVote}
-                    downVote={downVote}
-                    upDateComment={updateComment}
-                    user={user}
+    return <CommentVoting data={x}
+                          key={x._id}
+                          upVote={upVote}
+                          downVote={downVote}
+                          upDateComment={updateComment}
+                          user={user}
             />;
   });
   useEffect(()=>{
@@ -84,11 +84,11 @@ const Comments= (props) => {
             <div>
                 {comments}
                 {commentsData < 1 &&
-                  <h5 className="no-comments">
-                    Be the first to comment on this post.
-                  </h5>
+                  <h6 className="no-comments">
+                    There are no comments for this post.
+                  </h6>
                 }
-              <FormComment postId={props.postId}/>
+              <CommentForm postId={props.postId}/>
             </div>
           }
          </div>

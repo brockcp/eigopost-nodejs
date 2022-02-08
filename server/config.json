@@ -1,13 +1,13 @@
 ﻿{
-  "connectionString": "MONGODBCONNECTIONSTRING",
-  "secret": "SECRET",
-  "emailFrom": "info@eigopost.com",
+  "connectionString": "mongodb+srv://XXXXX",
+  "secret": "XXXXX",
+  "emailFrom": "XXXXX",
   "smtpOptions": {
-    "host": "smtp.sendgrid.net",
+    "host": "XXXXX",
     "port": 587,
     "auth": {
-      "user": "USER",
-      "pass": "PASS"
+      "user": "XXXXX",
+      "pass": "XXXXX"
     }
   }
 }

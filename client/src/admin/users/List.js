@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {accountService} from '@/_services';
+import '../Admin.css';
 
-function List({match}) {
-  const {path} = match;
+function List() {
   const [users, setUsers] = useState(null);
+  const navigate = useNavigate();
   useEffect(() => {
     accountService.getAll().then(x => setUsers(x));
   }, []);
@@ -19,13 +20,19 @@ function List({match}) {
   }
 
   return (
-    <div className="">
+    <div className="user-list">
       <h1 className="">Users</h1>
-      <Link to={`${path}/add`}
-            className="btn btn-sm btn-primary mb-2">
-        Add User
-      </Link>
-      <table className="table table-striped">
+        <div className="d-flex justify-content-between align-items-center">
+          <Link to='add'
+                className="btn btn-sm btn-primary mb-2">
+           Add User
+          </Link>
+          <Link to="/admin"
+                className="back-to-admin">
+           Back to admin
+          </Link>
+        </div>
+      <table className="table">
         <thead>
           <tr>
             <th style={{ width: '30%' }}>Username</th>
@@ -41,7 +48,7 @@ function List({match}) {
               <td>{user.email}</td>
               <td>{user.role}</td>
               <td style={{ whiteSpace: 'nowrap' }}>
-                <Link to={`${path}/edit/${user.id}`}
+                <Link to={`edit/${user.id}`}
                       className="btn btn-sm btn-primary me-1"
                       style={{width: '3.75rem'}}>
                   Edit

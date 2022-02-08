@@ -1,0 +1,115 @@
+.accounts-form{
+  width:98%;
+  margin: 2rem auto;
+  border-radius: 0.5rem;
+  background: var(--bgForm);
+  box-shadow: 0 0.938rem 1.875rem 0 rgba(0,0,0,.11), 0 0.313rem 0.938rem 0 rgba(0,0,0,.08);
+}
+@media (min-width: 36rem) {
+  .accounts-form{
+    max-width: 31.25rem;
+  }
+}
+.accounts-form-title{
+  font-weight: 500;
+  padding-top: 1.5rem;
+  padding-left:1rem;
+  color: var(--red-4);
+}
+.accounts-form h3{
+  color: var(--red-4);
+}
+.accounts-form p{
+  color: var(--fontColor-m3-m4);
+}
+.accounts-form-login{
+  font-weight: 500;
+  padding-left:1rem;
+  color: var(--fontColor-m1-m6);
+}
+.account-link,
+a.account-link,
+a.account-link:hover{
+  margin-left: 0.5rem;
+  color: var(--red-4);
+}
+.register .form-group,
+.login .form-group,
+.forgot-password .form-group,
+.reset-password .form-group{
+  margin-bottom: 1.5rem;
+}
+.accounts-form label{
+  color: var(--fontColor-m3-m4);
+}
+.account-terms,
+.account-terms:hover,
+.account-forgot,
+.account-forgot:hover,
+.forgot-password-cancel,
+.forgot-password-cancel:hover{
+  color: var(--red-4);
+}
+
+/* REMOVE YELLOW BG IN FIELDS ON SUBMIT */
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+} */
+.input{background:red!important}
+.form-control{
+  background: var(--bgFormControl) !important;
+  color: var(--fontColor-m1-m6) !important;
+  border: 1px solid  var(--borderBoxes) !important;
+  box-shadow: 20 0 0 0 inset !important;
+  outline:none;
+}
+.form-control:focus,
+.form-control:active{
+  background: var(--bgFormControlActive) !important;
+  color: var(--fontColor-m1-m6) !important;
+  border: 1px solid var(--borderBoxes) !important;
+  box-shadow: 0 0 0 0 inset !important;
+  outline:none;
+}
+.form-check-input:checked{
+  background-color: red !important;
+  border-color: red !important;
+}
+.form-control.is-invalid{
+  border: 1px solid  var(--mono-6);
+  outline:none !important;
+  background-image: none;
+  outline:none;
+}
+.invalid-feedback{
+  color: var(--red-4);
+}
+
+@keyframes ep-spinner{
+  to {transform: rotate(360deg);}
+}
+.ep-spinner {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  vertical-align: text-bottom;
+  border: 0.25em solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: ep-spinner .75s linear infinite;
+}
+.ep-spinner-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2em;
+}
+
+.reset-password p{
+  color: var(--fontColor-m1-m6);
+}
+.reset-password a{
+  color: var(--red-5);
+}

@@ -1,8 +1,20 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-
 module.exports = {
-  mode: 'development',
+  entry: path.resolve(__dirname, './src/index.js'),
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'bundle.js',
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname, './src/index.html'),
+      filename: 'index.html',
+      inject: 'body',
+      scriptLoading: 'blocking', //blocks defer in script tag
+      favicon: './src/favicon.ico',
+    }),
+  ],
   module:{
     rules:[
       {
@@ -29,18 +41,10 @@ module.exports = {
         ],
       },
       {
-        test: /\.s[ac]ss$/i,
-        use: [
-          { loader: 'style-loader' },
-          { loader: 'css-loader' },
-          { loader: 'sass-loader' }
-        ]
+        test:/\.css$/i,
+        use:['style-loader','css-loader'],
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader']
-      }
-    ]
+    ],
   },
   resolve:{
     mainFiles: ['index', 'Index'],
@@ -49,19 +53,14 @@ module.exports = {
       '@': path.resolve(__dirname, 'src/'),
     }
   },
-  plugins:[
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-      favicon: './src/favicon.ico'
-    }),
-  ],
   devServer:{
     port:3000,
     historyApiFallback: true,
   },
+  cache: false,
   externals:{
     config: JSON.stringify({
-      apiUrl: 'http://localhost:4000'
+      apiUrl: 'https://eigopost.com/api'
     })
   }
 }

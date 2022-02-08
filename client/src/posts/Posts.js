@@ -1,22 +1,24 @@
 import React,{useState, useEffect} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import {accountService} from '@/_services';
 import config from 'config';
-import {hookFetch} from '../_helpers/hook-fetch';
+import {HookFetch} from '../_helpers/HookFetch';
 import moment from 'moment';
-import {SkeletonPosts, ModalAccounts} from '@/_components';
+import {Skeleton, ModalAccounts} from '@/_components';
+import './Posts.css';
 
-const Posts = ({history}) => {
+const Posts = () => {
   document.title = 'EigoPost | Posts'
   const user = accountService.userValue;
-  const {data, error, loading} = hookFetch(`${config.apiUrl}/posts`);
+  let navigate = useNavigate();
+  const {data, error, loading} = HookFetch(`${config.apiUrl}/posts`);
   const [modalVisible, setModalVisible] = useState(false);
 
   function modalCheckUser(){
     if(!user){
       setModalVisible(true);
     }else{
-      history.push('new-post');
+      navigate('/new-post');
     }
   }
   return(
@@ -64,7 +66,7 @@ const Posts = ({history}) => {
                              setModalVisOff={setModalVisible}/>
             </div>
           ))}
-          {data === null && [1,2,3,4].map(x => <SkeletonPosts key={x}/>)}
+          {data === null && [1,2,3,4].map(x => <Skeleton key={x}/>)}
         </div>
         <div className="col-sm-12 col-lg-4 posts-sidebar">
         </div>

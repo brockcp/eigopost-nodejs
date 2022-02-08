@@ -1,0 +1,44 @@
+.update-form{
+  width:98%;
+  margin: 0 auto;
+  border-radius: 0.5rem;
+  background: var(--bgForm);
+  box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.2);
+}
+@media (min-width: 36rem) {
+  .update-form{
+    max-width: 31.25rem;
+  }
+}
+.update-form-title{
+  font-weight: 500;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  color: var(--red-4);
+}
+.update-form .form-group{
+  margin-bottom: 1.5rem;
+}
+.update-form h3{
+  color: var(--red-4);
+}
+.update-form h4{
+  margin-bottom: 1rem;
+  color: var(--red-4);
+}
+.update-form .password-message{
+  margin-left: .5rem;
+  font-size: 0.8rem;
+  color: var(--red-5);
+}
+.update-form label{
+  color: var(--fontColor-m1-m6);
+}
+.update-form .update-link{
+  margin-left: 60%;
+  color: var(--red-4);
+  text-decoration: none;
+}
+.update-form hr{
+  margin-top: 2rem;
+}

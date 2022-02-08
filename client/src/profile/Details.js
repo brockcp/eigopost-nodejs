@@ -1,21 +1,21 @@
-import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import React,{useState,useEffect} from 'react';
+import {Link, Navigate} from 'react-router-dom';
 import {accountService} from '@/_services';
 import moment from 'moment';
+import AuthCheck from '../_helpers/AuthCheck';
 import UserPosts from './UserPosts';
 import UserComments from './UserComments';
 import UserVotesUp from './UserVotesUp';
 import UserVotesDown from './UserVotesDown';
 
-const Details = ({match}) => {
-  const {path} = match;
+const Details = () => {
   const user = accountService.userValue;
-  if(!user){
-    return <Redirect to="/account/login"/>
-  }
+
   return (
     <div className="container profile-details">
       <div className="row">
+        {user && (
+        <div>
         <h3 className="">Profile</h3>
         <table>
           <thead>
@@ -39,7 +39,7 @@ const Details = ({match}) => {
             </tr>
           </tbody>
         </table>
-        <Link to={`${path}/update`}
+        <Link to='update'
               className="btn btn-primary">
           Update Profile
         </Link>
@@ -48,6 +48,9 @@ const Details = ({match}) => {
         <UserComments />
         <UserVotesUp />
         <UserVotesDown />
+       </div>
+     )}
+     {!user && <AuthCheck/>}
       </div>
     </div>
   );

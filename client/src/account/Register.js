@@ -1,40 +1,19 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link, Navigate, useNavigate} from 'react-router-dom';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import {accountService, alertService} from '@/_services';
 
-const Register = ({history}) => {
-  document.title = "Eigopost - Sign Up"
+const Register = () => {
+  document.title = "Eigopost | Sign Up"
   const user = accountService.userValue;
-  const initialValues = {
-    userName: '',
-    email: '',
-    password: '',
-    confirmPassword: '',
-    acceptTerms: false
-  };
-  const validationSchema = Yup.object().shape({
-    userName: Yup.string()
-      .required('Please enter a username'),
-    email: Yup.string()
-      .email('Email is invalid')
-      .required('Please enter an email address'),
-    password: Yup.string()
-      .min(6, 'Password must be at least 6 characters')
-      .required('Please enter a password'),
-    confirmPassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Passwords must match')
-      .required('Please reenter your password'),
-    acceptTerms: Yup.bool()
-      .oneOf([true], 'Please accept terms and conditions')
-  });
+  const navigate = useNavigate();
   function onSubmit(fields, {setStatus, setSubmitting}) {
     setStatus();
     accountService.register(fields)
     .then(() => {
       alertService.success('Fantastic! Please check your email to verify your account', { keepAfterRouteChange: true });
-      history.push('login');
+      navigate('/account/login');
     })
     .catch(error => {
       setSubmitting(false);
@@ -43,11 +22,36 @@ const Register = ({history}) => {
   }
 
   if(user){
-    return <Redirect to={{pathname: '/posts'}} />
+    return <Navigate replace to='/' />
   }
     return(
-    <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={onSubmit}>
-      {({ errors, touched, isSubmitting }) => (
+    <Formik initialValues={{
+              userName: '',
+              email: '',
+              password: '',
+              confirmPassword: '',
+              acceptTerms: false
+            }}
+            validationSchema={Yup.object().shape({
+              userName: Yup.string()
+                .required('Please enter a username'),
+              email: Yup.string()
+                .email('Email is invalid')
+                .required('Please enter an email address'),
+              password: Yup.string()
+                .min(6, 'Password must be at least 6 characters')
+                .required('Please enter a password'),
+              confirmPassword: Yup.string()
+                .oneOf([Yup.ref('password'), null], 'Passwords must match')
+                .required('Please reenter your password'),
+              acceptTerms: Yup.bool()
+                .oneOf([true], 'Please accept terms and conditions')
+              })}
+            onSubmit={onSubmit}>
+      {({ errors,
+          touched,
+          isSubmitting
+        }) => (
         <Form>
           <div className="register">
             <h3 className="accounts-form-title">Create an account</h3>

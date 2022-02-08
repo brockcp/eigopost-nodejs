@@ -1,23 +1,23 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import {accountService} from '@/_services';
 import logo from '../assets/img-logo-big.png';
+import './landing.css';
 
 const Landing = () => {
   document.title = "エイゴポスト | Welcome";
-  const user = accountService.userValue;
   return(
     <div className="container-fluid landing">
         <div className="jumbotron">
           <h1>
             EigoPost
-            {!user && <span lang="ja">
+            <span lang="ja">
               へようこそ!
-                      </span>
-            }
+            </span>
           </h1>
-          <img src={logo}
-               className="logo fade-in"
-               alt="logo"/>
+            <img src={logo}
+                 className="logo fade-in"
+                 alt="logo"
+            />
           <p>
              <span className='lang-ja' lang="ja">エイゴポストは、</span>
              <span className='lang-ja' lang="ja">日本人の</span>

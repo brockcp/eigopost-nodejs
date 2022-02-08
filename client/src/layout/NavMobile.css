@@ -1,0 +1,72 @@
+#menuButton{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 1.7rem;
+  height: 1.7rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+#menuButton .one,
+#menuButton .two,
+#menuButton .three{
+  width: 1.7rem;
+  height: 0.25rem;
+  background:  var(--mono-6);
+  border-radius: 0.625rem;
+  transition: all .2s linear;
+  transform:rotate(0);
+  //transition: all .2s cubic-bezier(0, 1.26, .8, 1.28);
+}
+#menuButton .one.close{
+  transform:rotate(-45deg) translate(-0.5rem, 0.313rem);
+  opacity:1;
+  background: var(--mono-6);
+  z-index:10
+}
+#menuButton .two.close{
+  opacity:0;
+}
+#menuButton .three.close{
+  transform:rotate(45deg) translate(-0.438rem, -0.375rem);
+  opacity:1;
+  background: var(--mono-6);
+  z-index:10;
+}
+
+
+#slideMenu {
+  position: fixed;
+  overflow: scroll;
+  top: 2.5rem;
+  left: .5rem;
+  z-index: 100;
+  padding:1.5rem;
+  border-radius: 0.25rem;
+  background: var(--bgMenu);
+  border: 1px solid var(--borderMenu);
+  transition: transform .5s cubic-bezier(0, .52, 0, 1);
+}
+#slideMenu.hide {
+  transform: translate3d(-100vw, 0, 0);
+}
+#slideMenu.show {
+  transform: translate3d(0vw, 0, 0);
+  overflow: hidden;
+}
+#slideMenu.show a{
+  padding: 0.5rem;
+  line-height: 0.75rem;
+  color: var(--mono-5) !important;
+}
+#slideMenu.show a:hover{
+  color: var(--mono-6) !important;
+}
+@media (min-width: 36rem) {
+  #menuButton,
+  #slideMenu{
+    display: none;
+  }
+}

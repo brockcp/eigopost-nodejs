@@ -1,44 +1,45 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
+import {Link, Navigate, useNavigate} from 'react-router-dom';
 import {Formik, Field, Form, ErrorMessage} from 'formik';
 import * as Yup from 'yup';
 import {accountService, alertService} from '@/_services';
+import './Account.css';
 
-const Login = ({history}) => {
-  document.title = "Eigopost - Sign in"
+const Login = () => {
+  document.title = "Eigopost | Sign in"
   const user = accountService.userValue;
-  const initialValues = {
-    email: '',
-    password: ''
-  };
-  const validationSchema = Yup.object().shape({
-    email: Yup.string()
-      .email('Email is invalid')
-      .required('Please enter your email address'),
-    password: Yup.string()
-      .required('Please enter your password')
-  });
+  const navigate = useNavigate();
   function onSubmit({email, password}, {setSubmitting}) {
     alertService.clear();
     accountService.login(email, password)
     .then(() => {
-       history.push('/posts');
-      //history.goBack(-1);
+      navigate(-1);
     })
     .catch(error => {
       setSubmitting(false);
-      alertService.error("Oops. Something happened. Please try that again.");
+      alertService.error("Please make sure your email and password are correct.");
     });
   }
-
-  if(user){
-    return <Redirect to={{pathname: '/posts'}} />
+  if (user){
+    return <Navigate replace to="/"/>;
   }
   return(
-    <Formik initialValues={initialValues}
-            validationSchema={validationSchema}
+    <Formik initialValues={{
+              email: '',
+              password: ''
+            }}
+            validationSchema={Yup.object().shape({
+              email: Yup.string()
+                .email('Email is invalid')
+                .required('Please enter your email address'),
+              password: Yup.string()
+                .required('Please enter your password')
+            })}
             onSubmit={onSubmit}>
-      {({errors, touched, isSubmitting}) => (
+      {({ errors,
+          touched,
+          isSubmitting
+        }) => (
         <Form>
           <div className="login">
             <h3 className="accounts-form-title">Sign in to your account</h3>
@@ -69,8 +70,7 @@ const Login = ({history}) => {
                 <button type="submit"
                         disabled={isSubmitting}
                         className="btn btn-primary">
-                  {isSubmitting && <span className="ep-spinner ep-spinner-sm mr-1"></span>}
-                    Login
+                  {isSubmitting ? <span className="ep-spinner ep-spinner-sm mr-1"></span> : "Login"}
                 </button>
                 <Link to={"/account/forgot-password"}
                       className="account-forgot mt-2 ms-3">

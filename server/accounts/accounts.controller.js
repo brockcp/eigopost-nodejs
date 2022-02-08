@@ -163,9 +163,6 @@ function create(req, res, next) {
         .then(account => res.json(account))
         .catch(next);
 }
-
-
-
 function updateSchema(req, res, next) {
     const schemaRules = {
         userName: Joi.string().empty(''),
@@ -180,9 +177,6 @@ function updateSchema(req, res, next) {
     const schema = Joi.object(schemaRules).with('password', 'confirmPassword');
     validateRequest(req, next, schema);
 }
-
-
-
 function update(req, res, next) {
     // users can update their own account and admins can update any account
     if (req.params.id !== req.user.id && req.user.role !== Role.Admin) {

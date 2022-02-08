@@ -1,4 +1,5 @@
 import React from 'react';
+import './home.css';
 
 const Terms = () => {
   document.title = "Eigopost | Terms of Use"

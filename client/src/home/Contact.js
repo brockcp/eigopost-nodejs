@@ -1,4 +1,5 @@
 import React from 'react';
+import './home.css';
 
 const Contact = () => {
   document.title = "Eigopost | Contact"

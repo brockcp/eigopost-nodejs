@@ -4,5 +4,4 @@ node_modules/
 client/dist
 server/dist
 
-brock-key.pem
 server/.env

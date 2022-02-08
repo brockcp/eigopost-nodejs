@@ -1,5 +1,5 @@
 export * from './Details';
-export * from './Switch';
+export * from './Profile';
 export * from './Update';
 export * from './UserComments';
 export * from './UserPosts';

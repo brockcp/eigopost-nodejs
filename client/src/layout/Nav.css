@@ -1,0 +1,35 @@
+@import '../styles/variables.css';
+
+ .navbar{
+	background-color: var(--bgNavbar) !important;
+	//border-bottom: 1px solid  var(--mono-6);
+  padding: 0rem 1.5rem !important;
+}
+.navbar .navbar-brand{
+  margin-left: 60px !important;
+}
+@media (min-width: 576px){
+  .navbar .navbar-brand{
+    margin-left: 0 !important;
+  }
+}
+.navbar .navbar-brand,
+.nav-link, a.nav-link{
+  color:  var(--mono-6) !important
+}
+.navbar .navbar-brand:hover,
+.nav-link:hover, a.nav-link:hover{
+  color:  var(--mono-6) !important;
+	cursor: pointer;
+}
+@media (min-width: 48rem){
+  .nav-item {
+    margin-left: 0.938rem;
+  }
+}
+.user-link{
+	border-radius: 0.5rem;
+}
+.user-link:hover{
+	background: var(--red-3);
+}

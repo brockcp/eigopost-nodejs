@@ -1,0 +1,15 @@
+{
+  "short_name": "EigoPost",
+  "name": "Study English with Eigopost",
+  "icons": [
+    {
+      "src": "./favicon.ico",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#e60000",
+  "background_color": "#ffffff"
+}

@@ -1,19 +1,15 @@
 import React from 'react';
-import {Router} from 'react-router-dom';
-import {render} from 'react-dom';
-import {history} from './_helpers';
-import {accountService} from './_services';
+import * as ReactDOM from "react-dom";
+import {BrowserRouter} from 'react-router-dom';
 import App from './app';
-import './scss/styles.scss';
-import './favicon.ico';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './styles/Main.css';
+import {accountService} from './_services';
 
-accountService.refreshToken().finally(startApp);
-
-function startApp() {
-  render(
-    <Router history={history}>
-      <App />
-    </Router>,
-    document.getElementById('app')
-  );
-}
+accountService.refreshToken();
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>,
+  document.getElementById('app')
+);

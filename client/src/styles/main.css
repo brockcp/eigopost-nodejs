@@ -1,0 +1,128 @@
+html, body{
+  padding:0;
+  margin:0;
+  font-size: 1em;
+	font-family: 'Helvetica', Times, serif;
+  background: var(--bgMain);
+}
+.container-main{
+  max-width: 100rem;
+  margin: 0 auto;
+}
+nav{
+  height: 3.125rem;
+}
+/* subtracted sum is supposed to be based on nav + footer */
+.global-mh{
+  min-height:calc(100vh - 15rem)
+}
+a{
+  text-decoration: none;
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+.fade-in{
+  animation: fadeIn .5s linear forwards !important;
+}
+.fade-in-2{
+  animation: fadeIn .2s linear forwards !important;
+}
+
+/*COMPONENT - NOT FOUND / ERROR */
+.logo-404{
+  width:60%;
+  height:auto;
+  padding: 2rem;
+}
+@media (min-width: 36rem){
+  .logo-404{
+    max-width: 25rem;
+    max-height: 25rem;
+  }
+}
+
+.unauthorized{
+  padding-top: 2rem;
+}
+.not-found h3,
+.error h3,
+.unauthorized h3{
+  color: var(--fontColor-m1-m6);
+  padding: 2rem;
+}
+.unauthorized .logo-404{
+  width: 250px;
+  height: 250px;
+}
+
+/****** BUTTONS ******/
+.btn{
+	border-radius:.25rem;
+	width:9.375rem;
+}
+.btn-primary{
+  color: var(--mono-6);
+	background-color: var(--buttonPrimary);
+	border-color: var(--red-4);
+}
+.btn-primary:hover{
+  color: var(--mono-6);
+	background-color: var(--buttonPrimaryHover);
+	border-color: var(--red-2);
+}
+.btn-primary:focus, .btn-primary.focus {
+  color: var(--mono-6);
+  background-color: var(--buttonPrimaryHover);
+  border-color: var(--red-2);
+  box-shadow: 0 0 0 0.2rem rgba(230, 0, 0, 0.5);
+}
+.btn-primary.disabled, .btn-primary:disabled {
+  color: var(--mono-6);
+  background-color: var(--buttonPrimaryHover);
+  border-color: var(--red-2);
+}
+.btn-primary:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active,
+.show > .btn-primary.dropdown-toggle {
+  color: var(--mono-6);
+  background-color: var(--buttonPrimaryHover);
+  border-color: var(--red-2);
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem var(--red-2);
+}
+
+.btn-secondary{
+  color: var(--mono-6);
+	background-color: transparent;
+	border-color: var(--blue-5);
+}
+.btn-secondary:hover{
+  color: var(--mono-6);
+	background-color: transparent;
+	border-color: var(--blue-6);
+}
+.btn-secondary:focus, .btn-secondary.focus {
+  color: var(--mono-6);
+  background-color: transparent;
+  border-color: var(--blue-6);
+  box-shadow: 0 0 0 0.2rem var(--mono-2);
+}
+.btn-secondary.disabled, .btn-secondary:disabled {
+  color: var(--mono-6);
+  background-color: transparent;
+  border-color: var(--blue-6);
+}
+.btn-secondary:not(:disabled):not(.disabled):active, .btn-secondary:not(:disabled):not(.disabled).active,
+.show > .btn-secondary.dropdown-toggle {
+  color: var(--mono-6);
+  background-color: transparent;
+  border-color: var(--blue-6);
+}
+.btn-secondary:not(:disabled):not(.disabled):active:focus, .btn-secondary:not(:disabled):not(.disabled).active:focus,
+.show > .btn-secondary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem var(--blue-6);
+}

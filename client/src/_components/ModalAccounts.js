@@ -2,6 +2,7 @@ import React from "react";
 import {NavLink} from 'react-router-dom';
 import {useTransition, animated} from "react-spring";
 import close from "../assets/icon-close.svg";
+import './Modal.css';
 
 const ModalAccounts = (props) => {
   const transitions = useTransition(props.modalVis, null, {
