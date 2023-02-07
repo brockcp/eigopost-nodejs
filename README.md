@@ -4,8 +4,10 @@
 
 ### Features:
 
-  - Users can post English grammar and usage questions to be answered by other users.
-  - Users can then vote these answers up or down.
+  - Users can post English grammar and usage questions to be answered/commented on by other 
+users.
+  - Users can also write short news or fictional stories to practice writing English.
+  - Users can then vote these answers/comments wers up or down.
 
 ### Technologies used:
 
